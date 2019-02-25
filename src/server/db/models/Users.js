@@ -40,32 +40,47 @@ const Users = db.define("users", {
   }
 });
 
-/* 
- * Instance Methods
+// INSTANCE METHODS
+
+/**
+ * Checks that input password is correct.
+ * 
+ * @param {string} inputPassword   Password that user tries to log in with.
+ * 
+ * @return {bool}                  Password is correct(T) or incorrect(F).
  */
-
-Users.prototype.correctPassword = function() {
-
+Users.prototype.passwordIsCorrect = function(inputPassword) {
+    return Users.encryptPassword(inputPassword, this.salt()) === this.password();
 }
 
-/*
- * Class Methods
- */
-
+// CLASS METHODS
 Users.generateSalt = function() {
   return crypto.randomBytes(16).toString('base64');
 }
 
+/**
+ * Encrypts password using a randomly generated salt.
+ * 
+ * @param {string} password      Password that user set/logs-in with
+ * @param {string} salt          Cryptographically generated salt
+ * 
+ * @return {string}              Retruns 'digested' password. A 'digest' is the output of a hash function.
+ */
+
 Users.encryptPassword = function(password, salt) {
   return crypto
-  .createHash('RSA-SHA256')
+  .createHash('RSA-SHA256')	
   .update(password)
   .update(salt)
   .digest('hex');
 }
 
-/*
- * Hooks
+// HOOKS
+/**
+ * Sets salt and password before user is created or updated. 
+ * @param {*} user       
+ * 
+ * @returns {null}  returns nothing
  */
 const setSaltAndPassword = function (user) {
   if(user.changed('password')) {
@@ -74,7 +89,7 @@ const setSaltAndPassword = function (user) {
   }
 }
 
-Users.beforeCreate(setSaltAndPassword());
-Users.beforeUpdate(setSaltAndPassword());
+Users.beforeCreate(setSaltAndPassword);
+Users.beforeUpdate(setSaltAndPassword);
 
 module.exports = Users
