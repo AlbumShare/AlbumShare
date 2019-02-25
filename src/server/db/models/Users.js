@@ -44,6 +44,7 @@ const Users = db.define("users", {
 
 /**
  * Checks that input password is correct.
+ * Will check the input password against password 'stored' in our database.
  * 
  * @param {string} inputPassword   Password that user tries to log in with.
  * 
