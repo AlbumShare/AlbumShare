@@ -5,7 +5,7 @@ const User_follows = db.define("userFollowers", {
 	//autoincremented follower id
 	fId:
 	{
-		type:Sequelize.INTEGER,
+		type:Sequelize.BIGINT(11),
 		primaryKey: true,
 		unique: true,
 		autoIncrement: true

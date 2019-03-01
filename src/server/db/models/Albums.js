@@ -6,11 +6,12 @@ const Albums = sequelized.define('Albums',
 	//albumId, auto increments
 	albumId:
 	{
-		type: Sequelize.LONG,
+		type: Sequelize.BIGINT(11),
 		primaryKey: true,
 		unique: true,
 		autoIncrement: true
 	},
+
 	// owner of the album
 	userName:
 	{
@@ -25,16 +26,8 @@ const Albums = sequelized.define('Albums',
     	}
     },
 
-    date_created:
-    {
-    	type: Sequelize.DATE,
-    	defaultValue: Sequelize.NOW
-    },
 
-    date_edit:
-    {
-    	type: Sequelize.DATE,
-    	
-    }
 
 });
+
+module.exports = {up(queryInterface, )}
