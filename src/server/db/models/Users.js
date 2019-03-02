@@ -3,22 +3,30 @@ const db = require('./../db');
 const crypto = require('crypto');
 
 const Users = db.define("users", {
-  firstName: {
+  userName:{
     type: Sequelize.STRING,
     AllowNull: false,
     notEmpty: true,
+    unique: 'compositeIndex',
+    primaryKey: true
+  },
+
+  firstName: {
+    type: Sequelize.STRING,
+    AllowNull: false,
+    notEmpty: true
   },
 
   lastName: {
     type: Sequelize.STRING,
     AllowNull: false,
-    notEmpty: true,
+    notEmpty: true
   },
 
   email: {
     type: Sequelize.STRING,
     isEmail: true,
-    notEmpty: true,
+    notEmpty: true
   },
   // SECURITY
   salt: {
