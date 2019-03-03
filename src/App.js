@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import backg from './backg.png';
-import './App.css';
+import { Link, Route, Switch } from 'react-router-dom';
+
+import logo1 from './img/mainpage/Logo1.svg'
+
+import Login from './Login/Login.js'
+import './App.css'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-        
 
-          <p>
-            PICO is an online album sharing app you can use.
-          </p>
+        <img id="icon" src={logo1} alt="" />
 
-
-          <a
-            className="App-link"
-            href="https://github.com/AlbumShare/AlbumShare"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Follow us on git !
-          </a>
+    
+          
+        <p id="logo_disc">Make sharing meaningful</p>  
+          
         </header>
+
+        <div className="Forms">
+        <li><Link to="/Login/Login">Login</Link></li>
+        <Route path="/Login/Login" component={Login}/>
+
+        </div>
       </div>
     );
   }
