@@ -73,8 +73,8 @@ img.bg {
 }
 
 #icon{
-  min-width: 100px;
-
+  min-width: 35px;
+  width:30%;
 }
 
 #logo_disc{
@@ -88,3 +88,11 @@ li{
   list-style-type: none;
 }
 
+.rotator{
+height:15px;
+width:15px;
+background:black;
+border-radius: 50%;
+
+color:white;
+}
