@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('./../db');
 
-const Photos = sequelize.define('Photos',
+const Photos = db.define('Photos',
 {
 	photoId:
 	{
@@ -19,7 +19,7 @@ const Photos = sequelize.define('Photos',
 	    notEmpty: true,
 	    references: 
     	{
-	    	model: Albums,
+	    	model: "Albums",
 	    	key: 'albumId',
 	    	deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
     	}

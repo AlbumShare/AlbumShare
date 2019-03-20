@@ -3,7 +3,7 @@ import { Link, Route} from 'react-router-dom';
 
 import logo1 from './Logo1.svg';
 import Logoanim, {Rotator} from './Animation';
-import style from '../styles.css';
+import style from '../public/styles.css';
 
 
 export default class Home extends Component {
