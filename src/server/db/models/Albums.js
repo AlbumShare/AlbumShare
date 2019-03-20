@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('./../db');
 
-const Albums = sequelized.define('Albums', 
+const Albums = db.define('Albums', 
 {
 	timestamps: true,
 	createdAt: 'albumCreateTime',
@@ -24,7 +24,7 @@ const Albums = sequelized.define('Albums',
 	    notEmpty: true,
 	    references: 
     	{
-	    	model: Users,
+	    	model: "Users",
 	    	key: 'userName',
 	    	deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
     	}
