@@ -18,7 +18,7 @@ const User_follows = db.define("userFollowers", {
 	    notEmpty: true,
 	    references: 
     	{
-	    	model: Users,
+	    	model: "Users",
 	    	key: 'userName',
 	    	deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
     	}
@@ -31,7 +31,7 @@ const User_follows = db.define("userFollowers", {
     	notEmpty: true,
     	references:
     	{
-    		model:Users,
+    		model:"Users",
     		key: 'userName',
     		deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
     	}

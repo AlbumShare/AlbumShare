@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('./../db');
 
-const Comments = sequelize.define('Comments',
+const Comments = db.define('Comments',
 {
 	timestamp: true,
 	createdAt: 'commentCreateTime',
@@ -23,7 +23,7 @@ const Comments = sequelize.define('Comments',
 	    notEmpty: true,
 	    references: 
     	{
-	    	model: Albums,
+	    	model: "Albums",
 	    	key: 'albumId',
 	    	deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
     	}
@@ -37,7 +37,7 @@ const Comments = sequelize.define('Comments',
 	    notEmpty: true,
 	    references: 
     	{
-	    	model: Users,
+	    	model: "Users",
 	    	key: 'userName',
 	    	deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
     	}
@@ -47,10 +47,10 @@ const Comments = sequelize.define('Comments',
     comment:
     {
     	type: Sequelize.TEXT,
-    	notEmpty: ture,
+    	notEmpty: true,
     	AllowNull: false
     }
 });
 
 
-module.exports = Photos;
+module.exports = Comments;
