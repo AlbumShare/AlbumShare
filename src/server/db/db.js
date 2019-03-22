@@ -3,8 +3,8 @@ const pkg = require('../../../package.json');
 
 // Make Database
 const db = new Sequelize(`postgres://localhost:5432/${pkg.name}`, {
-  logging: false,
+  force: true,
+  logging: true,
 });
-
 
 module.exports = db;

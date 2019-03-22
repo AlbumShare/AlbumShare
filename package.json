@@ -18,11 +18,12 @@
     "volleyball": "^1.5.1"
   },
   "scripts": {
-    "start": "(react-scripts start; node src/main) & ",
+    "start": "(react-scripts start; nodemon src/main) & ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000/",
   "eslintConfig": {
     "extends": "react-app"
   },
