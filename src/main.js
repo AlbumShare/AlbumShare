@@ -1,7 +1,7 @@
 
 // import db from './server/db/db';
 // import app from './server';
-const db = require('./server/db/index.js');
+const db = require('./server/db/db.js');
 const app = require('./server/index.js');
 
 require('babel-register')({
