@@ -10,12 +10,12 @@ const Albums = db.define('Albums',
 	//albumId, auto increments
 	albumId:
 	{
-		type: Sequelize.BIGINT(11),
+		type: Sequelize.INTEGER,
 		AllowNull: false,
 		notEmpty: true,
-		// primaryKey: true,
+		primaryKey: true,
 		unique: true,
-		// autoIncrement: true
+		autoIncrement: true
 	},
 
 	// // owner of the album
