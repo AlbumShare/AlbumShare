@@ -9,11 +9,12 @@ const pkg = require('../../../package.json');
 
 const DB_Name = 'albumShare',
 	DB_endpoint = 'awsdb.cxiesvd9xb7s.us-east-2.rds.amazonaws.com',
-	DB_userName = process.env.DB_UserName,
-	DB_password = process.env.DB_Password;
+	DB_userName = 'adminUser',
+	DB_password = 'db123456';
 
 const db = new Sequelize(DB_Name,DB_userName,DB_password,{
 	host:DB_endpoint,
+	port: 5435,
 	logging: false,
 	dialect: "postgres",
 	pool: {

@@ -38,4 +38,4 @@ const User_follows = db.define("userFollowers", {
     }
 })
 
-module.exports = User_follows
+module.exports = User_follows;

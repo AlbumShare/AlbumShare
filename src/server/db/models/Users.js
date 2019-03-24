@@ -105,4 +105,4 @@ Users.associate = models => {
     Users.hasMany(models.Albums, {onDelete: 'CASCADE'});
   };
 
-module.exports = Users
+module.exports = Users;
