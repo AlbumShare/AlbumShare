@@ -8,7 +8,7 @@ const pkg = require('../../../package.json');
 // });
 
 const DB_Name = 'albumShare',
-	DB_endpoint = 'albumsharedb.cxiesvd9xb7s.us-east-2.rds.amazonaws.com',
+	DB_endpoint = 'awsdb.cxiesvd9xb7s.us-east-2.rds.amazonaws.com',
 	DB_userName = process.env.DB_UserName,
 	DB_password = process.env.DB_Password;
 

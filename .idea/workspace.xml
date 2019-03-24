@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac8fbed1-7f21-4ed7-a92c-303bfd113a47" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/server/db/models/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/db/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/db/db.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/db/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/db/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/db/models/Albums.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/db/models/Albums.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/db/models/Comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/db/models/Comments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/db/models/Photos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/db/models/Photos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/db/models/User_follower.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/db/models/User_follower.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/db/models/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/db/models/Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -83,20 +78,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server/db/db.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="210">
+              <caret line="14" column="58" lean-forward="true" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/db/models/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="225">
+              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -120,12 +115,12 @@
         <option value="$PROJECT_DIR$/src/server/db/models/Comments.js" />
         <option value="$PROJECT_DIR$/src/server/db/models/Photos.js" />
         <option value="$PROJECT_DIR$/src/server/db/models/index.js" />
-        <option value="$PROJECT_DIR$/src/server/db/db.js" />
         <option value="$PROJECT_DIR$/src/server/db/models/Users.js" />
         <option value="$PROJECT_DIR$/src/server/index.js" />
         <option value="$PROJECT_DIR$/src/server/db/models/User_follower.js" />
         <option value="$PROJECT_DIR$/src/server/db/index.js" />
         <option value="$PROJECT_DIR$/src/server/db/models/Albums.js" />
+        <option value="$PROJECT_DIR$/src/server/db/db.js" />
       </list>
     </option>
   </component>
@@ -218,12 +213,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553370957930</updated>
-      <workItem from="1553370961594" duration="12191000" />
+      <workItem from="1553370961594" duration="12384000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12191000" />
+    <option name="totallyTimeSpent" value="12384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="94" y="23" width="1283" height="816" extended-state="0" />
@@ -311,6 +306,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/db/models/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/db/models/Students.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -328,27 +340,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/db/db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/db/models/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="210">
+          <caret line="14" column="58" lean-forward="true" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
         </state>
       </provider>
     </entry>
