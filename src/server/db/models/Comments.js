@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const db = require('./../db');
+const db = require('../db');
 
 const Comments = db.define('Comments',
 {
@@ -9,7 +9,7 @@ const Comments = db.define('Comments',
 	
 	commentId:
 	{
-		type: Sequelize.BIGINT(11),
+		type: Sequelize.BIGINT,
 		primaryKey: true,
 		unique: true,
 		autoIncrement: true
@@ -18,7 +18,7 @@ const Comments = db.define('Comments',
 	//the albumId where the comment belong
 	albumId:
 	{
-	    type: Sequelize.BIGINT(11),
+	    type: Sequelize.BIGINT,
 	    AllowNull: false,
 	    notEmpty: true,
 	    references: 

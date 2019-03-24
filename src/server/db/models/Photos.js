@@ -1,11 +1,11 @@
 const Sequelize = require('sequelize');
-const db = require('./../db');
+const db = require('../db');
 
 const Photos = db.define('Photos',
 {
 	photoId:
 	{
-		type: Sequelize.BIGINT(11),
+		type: Sequelize.BIGINT,
 		primaryKey: true,
 		unique: true,
 		autoIncrement: true
@@ -14,7 +14,7 @@ const Photos = db.define('Photos',
 	//the albumId where the photo belong
 	albumId:
 	{
-	    type: Sequelize.BIGINT(11),
+	    type: Sequelize.BIGINT,
 	    AllowNull: false,
 	    notEmpty: true,
 	    references: 
@@ -27,5 +27,7 @@ const Photos = db.define('Photos',
 	//TODO: we need to figure out how to store the actual photo in the db
 	//create a column for the photo storage
 });
+
+Photos.sync({force:false});
 
 module.exports = Photos;

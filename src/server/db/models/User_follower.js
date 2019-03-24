@@ -1,11 +1,11 @@
 const Sequelize = require('sequelize');
-const db = require('./../db');
+const db = require('../db');
 
 const User_follows = db.define("userFollowers", {
 	//autoincremented follower id
 	fId:
 	{
-		type:Sequelize.BIGINT(11),
+		type:Sequelize.BIGINT,
 		primaryKey: true,
 		unique: true,
 		autoIncrement: true
@@ -36,6 +36,6 @@ const User_follows = db.define("userFollowers", {
     		deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
     	}
     }
-});
+})
 
 module.exports = User_follows

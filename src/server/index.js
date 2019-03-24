@@ -4,7 +4,7 @@
 // import bodyparser from 'bodyparser';
 
 // import api from '.';
-
+const db = require('./db')
 const express = require('express');
 const path = require('path');
 const volleyball = require('volleyball');
@@ -42,6 +42,5 @@ app.use((err, req, res, next) => {
   // console.err(err.stack);
   res.status(err.status || 500).send(err.message || 'Internal Server Error.');
 });
-
 
 module.exports = app;

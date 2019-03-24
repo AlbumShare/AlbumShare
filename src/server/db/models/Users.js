@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const db = require('./../db');
+const db = require('../db');
 const crypto = require('crypto');
 
 const Users = db.define("users", {
@@ -100,5 +100,9 @@ const setSaltAndPassword = function (user) {
 
 Users.beforeCreate(setSaltAndPassword);
 Users.beforeUpdate(setSaltAndPassword);
+
+Users.associate = models => {
+    Users.hasMany(models.Albums, {onDelete: 'CASCADE'});
+  };
 
 module.exports = Users
