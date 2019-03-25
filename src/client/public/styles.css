@@ -49,13 +49,15 @@ a{color:#216588;
 
 #logButton{
   background-color: #F4BB97;
-  color: black;
+  border-radius: 5px;
+  padding: 0.5vh;
   font-size: 15px;
   margin-right:10px;
 }
 #signButton{
   background-color: #F4BB97;
-  color: #fff;
+  border-radius: 5px;
+  padding: 0.5vh;
   font-size: 15px;
   margin-right:20px;
 }
