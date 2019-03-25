@@ -9,6 +9,7 @@ import Login from './Login';
 import SignUp from './SignUp';
 
 export default class Home extends Component {
+
   /* // componentDidMount() {
   //   setInterval(() => {
   //     this.setState(
@@ -29,20 +30,16 @@ export default class Home extends Component {
         <Rotator className="rotator" pose= {'p1'}></Rotator>
        
         {/* <Logoanim className="logoanim" pose={isnormal ? 'normal' : 'big'} > */}
-        <Logoanim className="logoanim" pose={'big'} >
-        <img id="icon" src={logo1} alt="" /></Logoanim>
-  
-        <p id="logo_disc">Make sharing meaningful</p>  
+        
           
         </header>
         <Router>
         <div className="Forms">
-            <li><Link to="/">Home</Link></li>
 
-            <li><Link to="/Login">Login</Link></li>
+            <button id="logButton"><li><Link to="/Login">Login</Link></li></button>
            <Route path="/Login" component={Login}/>
 
-            <li><Link to="/SignUp">Sign up</Link></li>        
+           <button id="signButton"><li><Link to="/SignUp">Sign up</Link></li></button>       
            <Route path ="/SignUp" component={SignUp}/> 
  
         </div>
