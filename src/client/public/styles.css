@@ -15,7 +15,7 @@
 body {
   background-color: #CBD5CA;
 }
-a{color:#0170BF;
+a{color:#216588;
   text-decoration: none;
 }
 
@@ -47,7 +47,18 @@ a{color:#0170BF;
   background-color:#CBD5CA;
 }
 
-
+#logButton{
+  background-color: #F4BB97;
+  color: black;
+  font-size: 15px;
+  margin-right:10px;
+}
+#signButton{
+  background-color: #F4BB97;
+  color: #fff;
+  font-size: 15px;
+  margin-right:20px;
+}
 
 .App-link {
   color: #61dafb;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const Login = () =>(
   <div>
-    <h2>Login here bois !!</h2>
+    <h2>Minyoung's components</h2>
   </div>
 )
 
