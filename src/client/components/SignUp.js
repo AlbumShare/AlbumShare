@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const Signup= () =>(
   <div>
-    <h2>Minyoung's components</h2>
+    <h2>Sign up shit</h2>
   </div>
 )
 
