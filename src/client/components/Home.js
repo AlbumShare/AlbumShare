@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 import logo1 from './Logo1.svg';
-import Logoanim, {Rotator} from './Animation';
+import Logoanim, { Rotator } from './Animation';
 import style from '../public/styles.css';
 
 import Login from './Login';
@@ -25,27 +25,30 @@ export default class Home extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <button id="signButton2"><li><Link to="/SignUp">Sign up</Link></li></button>
+          <Route path="/SignUp" component={SignUp} />
+          {/* <Rotator className="rotator" pose= {'p' + rotatorpos.toString()}></Rotator> */}
+          <Rotator className="rotator" pose={'p1'}></Rotator>
 
-        {/* <Rotator className="rotator" pose= {'p' + rotatorpos.toString()}></Rotator> */}
-        <Rotator className="rotator" pose= {'p1'}></Rotator>
-       
-        {/* <Logoanim className="logoanim" pose={isnormal ? 'normal' : 'big'} > */}
-        
-          
+          {/* <Logoanim className="logoanim" pose={isnormal ? 'normal' : 'big'} > */}
+
+
         </header>
         <Router>
-        <div className="Forms">
+          <div className="Forms">
 
             <button id="logButton"><li><Link to="/Login">Login</Link></li></button>
-           <Route path="/Login" component={Login}/>
+            <Route path="/Login" component={Login} />
 
-           <button id="signButton"><li><Link to="/SignUp">Sign up</Link></li></button>       
-           <Route path ="/SignUp" component={SignUp}/> 
- 
-        </div>
+            <button id="signButton"><li><Link to="/SignUp">Sign up</Link></li></button>
+            <Route path="/SignUp" component={SignUp} />
+
+          </div>
         </Router>
 
       </div>
+
+
     );
   }
 }
