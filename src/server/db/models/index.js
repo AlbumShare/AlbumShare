@@ -1,23 +1,27 @@
-const Alubms = require('./Albums')
+const Albums = require('./Albums')
 const Comments = require('./Comments')
 const Users = require('./Users')
 const User_followers = require('./User_follower')
 const Photos = require('./Photos')
 
-Users.hasMany(Alubms)
-Alubms.belongsTo(Users, {through: 'userName'})
+Users.hasMany(Albums, {foreignKey: 'userName'});
 
-Users.hasMany(User_followers)
-User_followers.belongsTo(Users)
+Albums.belongsTo(Users, {foreignKey: 'userName',
+	as: 'owner'
+});
 
-Alubms.hasMany(Photos)
-Photos.belongsTo(Alubms, {through: 'albumId'})
+// Albums.hasMany(Photos)
 
-Alubms.hasMany(Comments)
-Comments.belongsTo(Alubms, {through: 'albumId'})
+Photos.belongsTo(Albums, {foreignKey:'albumId'});
+
+User_followers.belongsToMany(Users, {through: 'userName'});
+
+Comments.belongsTo(Albums, {foreignKey: 'albumId'});
+
+Users.belongsToMany(Comments, {through: 'commentId'});
 
 module.exports = {
-    Alubms,
+    Albums,
     Comments,
     Users,
     User_followers,

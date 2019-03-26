@@ -3,7 +3,6 @@ const db = require('../db');
 
 const Albums = db.define('Albums', 
 {
-
 	//albumId, auto increments
 	albumId: {
 		type: Sequelize.INTEGER,
@@ -14,21 +13,20 @@ const Albums = db.define('Albums',
 	},
 
 	// owner of the album
-	userName: {
-	    type: Sequelize.STRING,
-	    AllowNull: false,
-	    notEmpty: true,
-	    references:
-    	{
-	    	model: "Users",
-	    	key: 'userName',
-    	}
-    },
+	// userName: {
+	//     type: Sequelize.STRING,
+	//     AllowNull: false,
+	//     notEmpty: true,
+	    // references:
+    	// {
+	    // 	model: Users,
+	    // 	key: 'userName',
+    	// }
+    // },
 
-    //privacy field: wheather the album is public or private
+    //privacy field: whether the album is public or private
     privacy: {
     	type: Sequelize.INTEGER,
-    	AllowNull: false,
     	defaultValue: 1
     },
 
@@ -45,20 +43,11 @@ const Albums = db.define('Albums',
     description: {
     	type: Sequelize.TEXT
     },
-	// created_at:{
-	// 	type: Sequelize.DATE,
-	// 	defaultValue: Sequelize.NOW,
-	// 	allowNull: true
-	// },
-	// update_at: {
-	// 	type: Sequelize.DATE,
-	// 	allowNull: true
-	// }
 },{
 		timestamps: true,
 		createdAt: 'albumCreateTime',
 		updatedAt: 'albumsUpdateTime',
 	});
 
-
+// Users.hasMany(Albums);
 module.exports = Albums;
