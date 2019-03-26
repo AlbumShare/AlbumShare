@@ -7,19 +7,19 @@ const pkg = require('../../../package.json');
 //   logging: false,
 // });
 
-// const DB_Name = 'albumShare',
-// 	DB_endpoint = 'awsdb.cxiesvd9xb7s.us-east-2.rds.amazonaws.com',
-// 	DB_userName = 'adminUser',
-// 	DB_password = 'db123456';
-
-const DB_Name = 'postgres',
-	DB_endpoint = 'localhost',
-	DB_userName = 'iris',
+const DB_Name = 'albumShare',
+	DB_endpoint = 'awsdb.cxiesvd9xb7s.us-east-2.rds.amazonaws.com',
+	DB_userName = 'adminUser',
 	DB_password = 'db123456';
+
+// const DB_Name = 'postgres',
+// 	DB_endpoint = 'localhost',
+// 	DB_userName = 'iris',
+// 	DB_password = 'db123456';
 
 const db = new Sequelize(DB_Name,DB_userName,DB_password,{
 	host:DB_endpoint,
-	port: 5432,
+	port: 5435,
 	logging: false,
 	dialect: "postgres",
 	pool: {
