@@ -26,7 +26,7 @@ app.use(bodyparser.urlencoded({ exteded: true }));
 app.use(express.static(path.join(__dirname + '/../../client/public')));
 
 // middleware for our express routes
-// app.use('/api', api);
+app.use('/api', require('./api'));
 
 app.get('/', (req, res, next) => {
   res.send('hello you reached get/!');
