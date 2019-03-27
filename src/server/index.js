@@ -9,7 +9,7 @@ const express = require('express');
 const path = require('path');
 const volleyball = require('volleyball');
 const bodyparser = require('body-parser');
-// const api = require('../api');
+
 
 // express instance
 const app = express();
@@ -26,11 +26,13 @@ app.use(bodyparser.urlencoded({ exteded: true }));
 app.use(express.static(path.join(__dirname + '/../../client/public')));
 
 // middleware for our express routes
-// app.use('/api', api);
+app.use('/api', require('./api'));
+
+
 
 app.get('/', (req, res, next) => {
-  res.send('hello you reached get/!');
-})
+  res.send('hello!')
+});
 
 // send index.html to ALL requests
 app.get('*', (req, res, next) => {
@@ -44,4 +46,4 @@ app.use((err, req, res, next) => {
 });
 
 
-module.exports = app;
+module.exports = app

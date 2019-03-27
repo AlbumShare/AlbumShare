@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
-import logo1 from './Logo1.svg';
-import Logoanim, { Rotator } from './Animation';
-import style from '../public/styles.css';
+// import logo1 from './Logo1.svg';
+// import Logoanim, { Rotator } from './Animation';
+// import style from '../public/styles.css';
 
 import Login from './Login';
 import SignUp from './SignUp';
+
+require('../public/styles.css')
 
 export default class Home extends Component {
 
