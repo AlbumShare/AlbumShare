@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import {Provider} from 'react-redux';
 
 import Home from './Home';
-import Login from './Login';
-import SignUp from './SignUp';
+
 
 import store from '../../store';
 

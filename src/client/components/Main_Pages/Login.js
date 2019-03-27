@@ -27,6 +27,8 @@ class NameForm extends React.Component {
     event.preventDefault();
   }
 
+ 
+
   render() {
     return (
       <div>
@@ -36,7 +38,7 @@ class NameForm extends React.Component {
             <input type="text" value={this.state.Password} onChange={this.handleChangepw} />
 
           <input className="button" type="submit" value="Submit" />
-          <Link id="SignUpButton" to="/SignUp">Sign up</Link>      
+          <Link  id="SignUpButton" to="/SignUp">Sign up</Link>      
 
         </form>
       </div>

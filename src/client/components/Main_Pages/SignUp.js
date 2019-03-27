@@ -1,23 +1,38 @@
 import React, { Component } from 'react';
-import '../css/form.css'
+import {addUser} from '../../../reducer/userReducer';
+import {connect} from 'react-redux';
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import '../css/form.css'
 
 class SignForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {Name: 'Email',
-    Password:'Password'};
+    this.state = {
+      Email: 'Email',
+      FirstName:'First Name',
+      LastName:'Last Name',
+      Password:'Password'};
   
-    this.handleChangename = this.handleChangename.bind(this);
-    this.handleChangepw = this.handleChangepw.bind(this);
+      this.handleChangefn = this.handleChangefn.bind(this);
+      this.handleChangeln = this.handleChangeln.bind(this);
+      this.handleChangemail = this.handleChangemail.bind(this);
+      this.handleChangepw = this.handleChangepw.bind(this);
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChangename(event) {
-    this.setState({Name: event.target.value});
+  handleChangefn(event) {
+    this.setState({FirstName: event.target.value});
 
   }
+  handleChangeln(event){
+    this.setState({LastName: event.target.value});
+  }
+
+  handleChangemail(event){
+    this.setState({Email: event.target.value});
+  }
+
   handleChangepw(event){
     this.setState({Password: event.target.value});
   }
@@ -32,7 +47,9 @@ class SignForm extends React.Component {
       <div>
         <h4>Welcome to Pico !</h4>
         <form onSubmit={this.handleSubmit}>
-            <input type="text" value={this.state.Name} onChange={this.handleChangename} />
+            <input type="text" value={this.state.FirstName} onChange={this.handleChangefname} />
+            <input type="text" value={this.state.LastName} onChange={this.handleChangelname} />
+            <input type="text" value={this.state.Email} onChange={this.handleChangemail} />
             <input type="text" value={this.state.Password} onChange={this.handleChangepw} />
 
           <input className="button" type="submit" value="Submit" />

@@ -78,11 +78,13 @@ input[type=text], select {
       padding:1px;
       align:center;
   }
-  .user_info{
+  #user_info{
     Background-color: whitesmoke;
-      border-radius: 15px 15px 15px 15px;
-      width: 35%;
-    height: 50%;
+    border-radius: 15px 15px 15px 15px;
+    width: 35%;
+    height: 62%;
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
       
   }
 

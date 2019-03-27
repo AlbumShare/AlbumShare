@@ -35,3 +35,7 @@ input[type=text] {
     transform:scale(1.1);
 
   }
+
+  .enlarge{
+    height: 63%;
+  }
