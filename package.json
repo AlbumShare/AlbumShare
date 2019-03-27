@@ -23,7 +23,7 @@
     "volleyball": "^1.5.1"
   },
   "scripts": {
-    "start": "(react-scripts start; node src/main) & ",
+    "start": "(react-scripts start && node src/main)  ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
