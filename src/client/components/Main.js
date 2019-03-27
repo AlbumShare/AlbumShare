@@ -5,7 +5,10 @@ import Home from './Home';
 import Login from './Login';
 import SignUp from './SignUp';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 692c5ba87b249b523280a559a1b69f02b9fc31e8
 export default class App extends Component {
   render() {
     return (
