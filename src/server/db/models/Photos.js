@@ -1,7 +1,17 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
-// const Albums = require('../db/models');
 
+// import SequelizeFile from 'sequelize-file';
+
+// export const picture = SequelizeFile({
+// 	attribute: 'picture',
+// 	mimetype: /^image/,
+// 	crop: true,
+// 	sizes: {
+// 		small: 64, //width 64
+// 		big: 150, //width 150
+// 	}
+// });
 
 const Photos = db.define('Photos',
 {
@@ -13,23 +23,13 @@ const Photos = db.define('Photos',
 		autoIncrement: true
 	},
 
-	//the albumId where the photo belong
-	// albumId:
-	// {
-	//     type: Sequelize.BIGINT,
-	//     AllowNull: false,
-	//     notEmpty: true,
-	//     references:
-    // 	{
-	//     	model: Albums,
-	//     	key: 'albumId',
-	//     	deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-    // 	}
-    // }
-	//TODO: we need to figure out how to store the actual photo in the db
-	//create a column for the photo storage
+	url:
+		{
+			type: Sequelize.STRING,
+			unique: true
+		}
 }, {timestamps:false});
 
-// Photos.sync({force:false});
+// picture.addTo(Photos);
 
 module.exports = Photos;

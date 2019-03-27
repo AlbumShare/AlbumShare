@@ -26,7 +26,10 @@ const Users = db.define("Users", {
   email: {
     type: Sequelize.STRING,
     isEmail: true,
-    notEmpty: true
+    notEmpty: true,
+    validate: {
+      isEmail: true
+    }
   },
   // SECURITY
   salt: {
@@ -106,5 +109,6 @@ Users.beforeUpdate(setSaltAndPassword);
 Users.associate = models => {
     Users.hasMany(models.Albums, {onDelete: 'CASCADE'});
   };
+
 
 module.exports = Users;

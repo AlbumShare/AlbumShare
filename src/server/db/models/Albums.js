@@ -1,28 +1,21 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
+const validate = require('validator')
 
 const Albums = db.define('Albums', 
 {
 	//albumId, auto increments
 	albumId: {
 		type: Sequelize.INTEGER,
+		validate: {
+			isNumeric: true
+		},
 		AllowNull: false,
 		notEmpty: true,
 		primaryKey: true,
 		autoIncrement: true
 	},
 
-	// owner of the album
-	// userName: {
-	//     type: Sequelize.STRING,
-	//     AllowNull: false,
-	//     notEmpty: true,
-	    // references:
-    	// {
-	    // 	model: Users,
-	    // 	key: 'userName',
-    	// }
-    // },
 
     //privacy field: whether the album is public or private
     privacy: {
@@ -48,6 +41,4 @@ const Albums = db.define('Albums',
 		createdAt: 'albumCreateTime',
 		updatedAt: 'albumsUpdateTime',
 	});
-
-// Users.hasMany(Albums);
 module.exports = Albums;

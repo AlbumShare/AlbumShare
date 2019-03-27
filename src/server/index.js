@@ -9,10 +9,11 @@ const express = require('express');
 const path = require('path');
 const volleyball = require('volleyball');
 const bodyparser = require('body-parser');
-// const api = require('../api');
-
+const api = require('/api')
 // express instance
 const app = express();
+
+// app.use('/api', require('./api'))
 
 // logging middleware
 app.use(volleyball);
@@ -43,4 +44,11 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).send(err.message || 'Internal Server Error.');
 });
 
-module.exports = app;
+// Serve api
+app.use('/api', require('./api'))
+
+// sync DB
+const syncDB = () => db.sync()
+
+
+module.exports = app
