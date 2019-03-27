@@ -1,13 +1,13 @@
 const Sequelize = require('sequelize');
-const db = require('./../db');
+const db = require('../db');
 const crypto = require('crypto');
 
-const Users = db.define("users", {
+const Users = db.define("Users", {
   userName:{
     type: Sequelize.STRING,
     AllowNull: false,
-    notEmpty: true,
     unique: 'compositeIndex',
+    notEmpty: true,
     primaryKey: true
   },
 
@@ -46,6 +46,8 @@ const Users = db.define("users", {
       return () => this.getDataValue('password');
     }
   }
+},{
+  timestamps: false
 });
 
 // INSTANCE METHODS
@@ -101,4 +103,8 @@ const setSaltAndPassword = function (user) {
 Users.beforeCreate(setSaltAndPassword);
 Users.beforeUpdate(setSaltAndPassword);
 
-module.exports = Users
+Users.associate = models => {
+    Users.hasMany(models.Albums, {onDelete: 'CASCADE'});
+  };
+
+module.exports = Users;

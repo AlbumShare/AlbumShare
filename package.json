@@ -36,5 +36,16 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0"
+  },
+  "description": "Minyoung Na / Iris Huang / Ray Lee / Mrigank Saksena",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbumShare/AlbumShare.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlbumShare/AlbumShare/issues"
   }
 }
