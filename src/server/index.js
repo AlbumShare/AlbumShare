@@ -46,4 +46,14 @@ app.use((err, req, res, next) => {
 });
 
 
+<<<<<<< HEAD
 module.exports = app
+=======
+module.exports = app;
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 692c5ba87b249b523280a559a1b69f02b9fc31e8
+>>>>>>> b3e49ab5dee93f155b94371b7c8cd7ee15f6449b

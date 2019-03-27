@@ -18,19 +18,21 @@ const Albums = db.define('Albums',
 		autoIncrement: true
 	},
 
-	// // owner of the album
-	// userName:
-	// {
-	//     type: Sequelize.STRING,
-	//     AllowNull: false,
-	//     notEmpty: true,
-	//     references: 
-  //   	{
-	//     	model: "Users",
-	//     	key: 'userName',
-	//     	deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-  //   	}
-  //   },
+
+	// owner of the album
+	userName:
+	{
+	    type: Sequelize.STRING,
+	    AllowNull: false,
+	    notEmpty: true,
+	    references: 
+    	{
+	    	model: "Users",
+	    	key: 'userName',
+	    	deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+    	}
+    },
+
 
   //   //privacy field: wheather the album is public or private
   //   privacy:

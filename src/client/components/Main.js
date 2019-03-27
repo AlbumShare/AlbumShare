@@ -6,8 +6,11 @@ import Home from './Home';
 import Login from './Login';
 import SignUp from './SignUp';
 
+<<<<<<< HEAD
 import store from '../../store';
 
+=======
+>>>>>>> b3e49ab5dee93f155b94371b7c8cd7ee15f6449b
 export default class App extends Component {
   render() {
     return (
