@@ -1,38 +1,47 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import React, {Component} from 'react';
+import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 
-// import logo1 from './Logo1.svg';
-// import Logoanim, { Rotator } from './Animation';
-// import style from '../public/styles.css';
+import logo1 from './img/Logo1.svg';
+import style from '../public/styles.css';
 
-import Login from './Login';
-import SignUp from './SignUp';
+import Login from './Main_Pages/Login';
+import SignUp from './Main_Pages/SignUp';
+import Placeholder from './Main_Pages/Placeholder';
 
-require('../public/styles.css')
-
+import './css/Main.css'
 export default class Home extends Component {
-
   render() {
+
     return (
+      <Router>
+
       <div className="App">
         <header className="App-header">
-          <button id="signButton2"><li><Link to="/SignUp">Sign up</Link></li></button>
-          <Route path="/SignUp" component={SignUp} />
+
+        <div className="Iconhold">
+          <Link to="/"><img id="icon" src={logo1} alt="" /></Link>
+          <p id="logo_disc">Make sharing meaningful</p>  
+
+          <p id="footer">Minyoung Na/Mrigank Saksena/Ray Lee/Iris Huang  </p>
+        </div>
+
+
+          
         </header>
-        <Router>
-          <div className="Forms">
+        <div className="Forms">
+          
+          <div className ="user_info">
 
-            <button id="logButton"><li><Link to="/Login">Login</Link></li></button>
-            <Route path="/Login" component={Login} />
+            <Route exact path="/" component={Login}/>
+            <Route path="/Login" component={Login}/>
+            <Route path ="/SignUp" component={SignUp}/> 
 
-            <button id="signButton"><li><Link to="/SignUp">Sign up</Link></li></button>
-            <Route path="/SignUp" component={SignUp} />
 
           </div>
-        </Router>
+        </div>
 
       </div>
-
+      </Router>
 
     );
   }
