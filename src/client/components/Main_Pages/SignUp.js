@@ -9,6 +9,7 @@ class SignForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      UserName: '',
       Email: '',
       FirstName:'',
       LastName:'',
