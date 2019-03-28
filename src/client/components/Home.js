@@ -23,7 +23,6 @@ export default class Home extends Component {
           <Link to="/"><img id="icon" src={logo1} alt="" /></Link>
           <p id="logo_disc">Make sharing meaningful</p>  
 
-          <p id="footer">Minyoung Na/Mrigank Saksena/Ray Lee/Iris Huang  </p>
         </div>
 
 
