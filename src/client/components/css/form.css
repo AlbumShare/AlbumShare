@@ -1,0 +1,41 @@
+form{
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 4% 5%;
+    margin: 3% 0px;
+    box-sizing: border-box;
+  }
+
+  .button{
+        background-color: #f78154;
+        border: none;
+        color: white;
+        padding: 3%;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 0.8em;
+        margin: 7%;
+        cursor: pointer;
+
+        transition-duration: .2s;
+        transition-timing-function: ease-out;
+    
+      
+  }
+
+  .button:hover{
+
+    transform:scale(1.1);
+
+  }
+
+  .enlarge{
+    height: 63%;
+  }

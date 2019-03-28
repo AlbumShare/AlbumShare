@@ -11,7 +11,6 @@ require('./server');
 
 
 const PORT = 5000;
-
 // db.sync()
 //   .then((promise) => {
 //     // console.log(promise);
