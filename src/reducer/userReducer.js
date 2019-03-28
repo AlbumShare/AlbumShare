@@ -32,7 +32,7 @@ export const addNewUserCreator = (newUser) => {
 // Thunk Creator
 export const getAllUsers = () => {
   return async dispatch => {
-    const res = axios.get('/api/users');
+    const res = await axios.get('/api/users');
     const users = res.data;
     dispatch(getAllUsersCreator(users));
   }
@@ -48,7 +48,7 @@ export const getSingleUser = (userId) => {
 
 export const addUser = (userInfo) => {
   return async dispatch => {
-    const res = axios.post('/api/users', userInfo);
+    const res = await axios.post('/api/users', userInfo);
     const newUser = res.data;
     dispatch(addNewUserCreator(newUser));
   }
@@ -64,6 +64,8 @@ const reducer = (state = initialState, action) => {
       return action.getAllUsers;
     case GET_SINGLE_USER:
       return action.getSingleUser;
+    case ADD_NEW_USER:
+      return action.addUser;
   }
 }
 

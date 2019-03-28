@@ -23,7 +23,7 @@ app.use(bodyparser.urlencoded({ exteded: true }));
 
 
 // middleware to serve static files
-app.use(express.static(path.join(__dirname + '/../../client/public')));
+app.use(express.static(path.join(__dirname + '/../../public')));
 
 // middleware for our express routes
 app.use('/api', require('./api'));
@@ -34,7 +34,7 @@ app.get('/', (req, res, next) => {
 
 // send index.html to ALL requests
 app.get('*', (req, res, next) => {
-  res.sendFile(path.join(__dirname + '/../../client/public'));
+  res.sendFile(path.join(__dirname + '/../../public'));
 });
 
 // error handling middleware

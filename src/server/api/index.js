@@ -9,8 +9,6 @@ router.use((req, res, next) => {
   const err = new Error("API ROUTE NOT FOUND!");
   err.status = 404;
   next(err)
-  // res.send(err);
-  
 })
 
 module.exports = router;
