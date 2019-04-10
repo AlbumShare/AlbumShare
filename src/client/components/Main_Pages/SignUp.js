@@ -25,10 +25,10 @@ class SignForm extends React.Component {
       this.addUser = this.addUser.bind(this);
   }
 
-  async addUser(userInfo) {
+  async addUser() {
     try {
       await axios.post('http://localhost:5000/api/users/', {
-        userName: "userName",
+        userName: this.state.userName,
         firstName: this.state.FirstName,
         lastName: this.state.LastName,
         email: this.state.Email,
@@ -58,6 +58,11 @@ class SignForm extends React.Component {
       <div>
         <h4>Welcome to Pico !</h4>
         <form onSubmit={this.handleSubmit}>
+          <p>User Name</p>
+          <input type='text' 
+            name='userName'
+            value={this.state.userName} 
+            onChange={this.handleChange}/>
           <p>First Name</p>
           <input type='text' 
             name='FirstName'
