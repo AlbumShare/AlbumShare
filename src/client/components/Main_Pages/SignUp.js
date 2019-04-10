@@ -44,21 +44,6 @@ class SignForm extends React.Component {
       [event.target.name]: event.target.value
     },() => {console.log(this.state)});
   }
-  // handleChangefn(event) {
-  //   this.setState({FirstName: event.target.value});
-
-  // }
-  // handleChangeln(event){
-  //   this.setState({LastName: event.target.value});
-  // }
-
-  // handleChangemail(event){
-  //   this.setState({Email: event.target.value});
-  // }
-
-  // handleChangepw(event){
-  //   this.setState({Password: event.target.value});
-  // }
 
   handleSubmit(event) {
     alert('Sign in as ' + this.state.Name);
@@ -73,20 +58,6 @@ class SignForm extends React.Component {
       <div>
         <h4>Welcome to Pico !</h4>
         <form onSubmit={this.handleSubmit}>
-            {/* <input name="firstName" 
-              type="text" 
-              value={this.state.FirstName} 
-              onChange={this.handleChange} 
-              defaultValue="First Name"/>
-            <input name="lastName" type="text" value={this.state.LastName} onChange={this.handleChange} defaultValue="Last Name"/>
-            <input name="Email" type="text" value={this.state.Email} onChange={this.handleChange} defaultValue="Email"/>
-            <input name="Password" type="password" value={this.state.Password} onChange={this.handleChange} defaultValue="Password"/> */}
-          {/* <input className="button" type="submit" value="Submit" /> */}
-          {/* <p>User Name</p>
-          <input type='text' 
-            name='userName'
-            value={this.state.userName}
-            onChange={this.handleChange}/> */}
           <p>First Name</p>
           <input type='text' 
             name='FirstName'
