@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {addUser} from '../../../reducer/userReducer';
+// import {addUser} from '../../../reducer/userReducer';
 import {connect} from 'react-redux';
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import '../css/form.css'
