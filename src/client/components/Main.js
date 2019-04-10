@@ -6,12 +6,12 @@ import Home from './Home';
 import Search from './Search';
 import User from './User';
 
-import store from '../../store';
+// import store from '../../store';
 
 export default class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+
         <Router>
           <Switch>
             <Route exact path="/" component={Home}/>
@@ -20,7 +20,7 @@ export default class App extends Component {
 
           </Switch>
         </Router>
-      </Provider>  
+
     )
   }
 }
