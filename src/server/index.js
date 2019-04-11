@@ -25,9 +25,9 @@ app.use(express.static(path.join(__dirname + '/../../public')));
 // middleware for our express routes
 app.use('/api', require('./api'));
 
-// app.get('/', (req, res, next) => {
-//   res.send('hello you reached get/!');
-// })
+app.get('/', (req, res, next) => {
+  res.send('hello you reached get/!');
+})
 
 // send index.html to ALL requests
 app.get('*', (req, res, next) => {
