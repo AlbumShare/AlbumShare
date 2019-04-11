@@ -9,11 +9,11 @@ class SignForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      UserName: 'User Name',
-      Email: 'Email',
-      FirstName:'First name',
-      LastName:'Last Name',
-      Password:'Password'
+      UserName: '',
+      Email: '',
+      FirstName:'',
+      LastName:'',
+      Password:''
     };
   
       // this.handleChangefn = this.handleChangefn.bind(this);
@@ -25,10 +25,10 @@ class SignForm extends React.Component {
       this.addUser = this.addUser.bind(this);
   }
 
-  async addUser(userInfo) {
+  async addUser() {
     try {
       await axios.post('http://localhost:5000/api/users/', {
-        userName: "userName",
+        userName: this.state.userName,
         firstName: this.state.FirstName,
         lastName: this.state.LastName,
         email: this.state.Email,
@@ -46,7 +46,7 @@ class SignForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Sign in as ' + this.state.UserName);
+    alert('Sign in as ' + this.state.Name);
     event.preventDefault();
     this.addUser(this.state);
   }
@@ -58,28 +58,32 @@ class SignForm extends React.Component {
       <div>
         <h4>Welcome to Pico !</h4>
         <form onSubmit={this.handleSubmit}>
-
+          <p>User Name</p>
+          <input type='text' 
+            name='userName'
+            value={this.state.userName} 
+            onChange={this.handleChange}/>
+          <p>First Name</p>
           <input type='text' 
             name='FirstName'
             value={this.state.FirstName}
             onChange={this.handleChange}/>
+          <p>Last Name</p>
           <input type='text' 
             name='LastName'
             value={this.state.LastName}
             onChange={this.handleChange}/>
+          <p>E-mail</p>
           <input type='text' 
             name='Email'
             value={this.state.Email}
             onChange={this.handleChange}/>
-          <input type='text' 
-            name='UserName'
-            value={this.state.UserName}
-            onChange={this.handleChange}/>
-          <input type='text' 
+          <p>Password</p>
+          <input type='password' 
             name='Password'
             value={this.state.Password}
             onChange={this.handleChange}/>
-          <input className="button" type="submit" value="Submit" />
+          <button type="submit">Sign-Up</button>
         </form>
         <Link id="LoginUpButton" to="/Login">Login</Link>      
       </div>

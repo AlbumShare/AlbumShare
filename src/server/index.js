@@ -1,18 +1,15 @@
-// import express from 'express';
-// import path from 'path';
-// import volleyball from 'volleyball';
-// import bodyparser from 'bodyparser';
-
-// import api from '.';
-
 const express = require('express');
 const path = require('path');
 const volleyball = require('volleyball');
 const bodyparser = require('body-parser');
-// const api = require('../api');
+const cors = require('cors');
+
 
 // express instance
 const app = express();
+
+// cors
+app.use(cors());
 
 // logging middleware
 app.use(volleyball);
