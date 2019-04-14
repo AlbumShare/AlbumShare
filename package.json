@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "nodemon": "^1.18.10",
@@ -24,7 +25,9 @@
     "volleyball": "^1.5.1"
   },
   "scripts": {
-    "start": "react-scripts start && node src/main",
+    "start": "concurrently \"npm:start-db\" \"npm:start-react\" ",
+    "start-react": "react-scripts start",
+    "start-db": "node src/main",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
