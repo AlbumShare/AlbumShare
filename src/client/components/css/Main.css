@@ -86,9 +86,33 @@
     font-size: 0.8em;
   }
 
+  #Signup{
+    background-color: #f78154;
+    border: none;
+    color: white;
+    padding: 3%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 7%;
+    cursor: pointer;
+
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+
+  }
+
+  #Signup:hover{
+
+    transform:scale(1.1);
+
+  }
+
   #LoginUpButton{
     height: 20%;
     display: block;
     font-size: 0.8em;
 
   }
+
