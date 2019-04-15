@@ -7,6 +7,7 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "busboy": "^0.3.1",
+    "concurrently": "^4.1.0",
     "connect-session-sequelize": "^6.0.0",
     "cors": "^2.8.5",
     "create-react-class": "^15.6.3",
@@ -33,7 +34,9 @@
     "volleyball": "^1.5.1"
   },
   "scripts": {
-    "start": "node src/main & react-scripts start;",
+    "start": "concurrently \"npm:start-db\" \"npm:start-react\" ",
+    "start-react": "react-scripts start",
+    "start-db": "node src/main",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
