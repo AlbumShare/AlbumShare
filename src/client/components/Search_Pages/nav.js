@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import '../css/Search.css'
 import axios from 'axios';
 
-
-class navigation extends React.Component{
+export default class navigation extends React.Component{
 
     constructor(props) {
         super(props);
@@ -33,7 +32,6 @@ class navigation extends React.Component{
       async Search() {
         var url ='http://localhost:5000/api/users';
         var i ;
-        var input = this.state.nav;
 
         await axios.get(url)
         .then(function (response) {
@@ -59,11 +57,13 @@ class navigation extends React.Component{
                     />
                 <button id="Search" type="submit">Search !</button>
                 </form>
-                <ul> 
-                   { this.state.persons.map(person => <li>{person.firstName}</li>)}
-                </ul>
+                <objecto nav={this.state.nav}/>
+
         </div>
         );
     }
 }
-export default navigation
+
+
+
+

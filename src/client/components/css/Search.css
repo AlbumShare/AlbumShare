@@ -12,7 +12,7 @@ body{
 }
 
 #searchbar{
-    padding: 1.5% 1.25%;
+    padding: 0.75% 1.25%;
     width: 50%;
 }
 
@@ -38,6 +38,17 @@ body{
     transform:scale(1.1);
 
   }
+
+ #feed{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color:whitesmoke;
+    left: 0;
+    top: 16%;
+    text-align: Center;
+
+ } 
 
   form{
     animation : none;
