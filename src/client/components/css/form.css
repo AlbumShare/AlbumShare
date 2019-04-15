@@ -23,7 +23,6 @@ input[type=text] {
         font-size: 0.8em;
         margin: 7%;
         cursor: pointer;
-
         transition-duration: .2s;
         transition-timing-function: ease-out;
     
