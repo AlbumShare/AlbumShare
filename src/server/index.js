@@ -54,25 +54,26 @@ app.use(passport.session());
 
 // express-session: used for keep user logging in
 app.use(session({
-  secret: true,
+  // secret: 'true',
+  secret: 'secret_string',
   store: sessionStore,
   resave: false,
   saveUninitialized: true
 }))
 
 // check if client sent cookie
-app.use(function(req, res, next) {
-  console.log('session id is: , ', req.session.id)
-  var cookie = req.cookies.cart
-  if (cookie === undefined) {
-    // no: set a new cookie
-    res.cookie('cart', '', {maxAge: 900000, httpOnly: true})
-    console.log('cookie created successfully')
-  } else {
-    // yes, cookie was already present
-    console.log('cookie exists', cookie)
-  }
-  next()
-});
+// app.use(function(req, res, next) {
+//   console.log('session id is: , ', req.session.id)
+//   var cookie = req.cookies.cart // THIS IS UNDEFINED!
+//   if (cookie === undefined) {
+//     // no: set a new cookie
+//     res.cookie('cart', '', {maxAge: 900000, httpOnly: true})
+//     console.log('cookie created successfully')
+//   } else {
+//     // yes, cookie was already present
+//     console.log('cookie exists', cookie)
+//   }
+//   next()
+// });
 
 module.exports = app;
