@@ -16,7 +16,6 @@ export default class Home extends Component {
     return (
       <div className="App">
         <Router>
-        <Switch>
 
         <div >
             <Route path="/" component={navigation}/>
@@ -24,7 +23,6 @@ export default class Home extends Component {
 
         </div>
         
-        </Switch>
       </Router>
       </div>
     );

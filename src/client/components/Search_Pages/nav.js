@@ -4,18 +4,18 @@ import '../css/Search.css'
 import axios from 'axios';
 
 
-
 class navigation extends React.Component{
 
     constructor(props) {
         super(props);
         this.state = {
-          nav:"Search Anything ( Username , Album tag, etc... ) "
+          nav:"Search Anything ( Username , Album tag, etc... ) ",
+          persons: []
+
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.Search = this.Search.bind(this);
-
       }
       
       handleChange(event){
@@ -25,32 +25,29 @@ class navigation extends React.Component{
       }
 
       handleSubmit(event) {
-        alert('Searching ' + this.state.nav);
 
         event.preventDefault();
-        this.Search();
+        return this.Search();
       }
 
       async Search() {
+        var url ='http://localhost:5000/api/users';
+        var i ;
+        var input = this.state.nav;
 
-        await axios.get('http://localhost:5000/api/users/', {
-                params:{
-                    firstname: this.state.nav
-                }
-            })
-            .then(function(response){
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        await axios.get(url)
+        .then(function (response) {
+          var flyToTheMoon = function() {
+          }()
+        }).catch(function (error) {
+          console.log(error);
+        });
       }
-          
-
 
     render() {
         return (
         <div id = "navbar" >
+       
                 <form onSubmit={this.handleSubmit}>
 
                 <input 
@@ -62,6 +59,9 @@ class navigation extends React.Component{
                     />
                 <button id="Search" type="submit">Search !</button>
                 </form>
+                <ul> 
+                   { this.state.persons.map(person => <li>{person.firstName}</li>)}
+                </ul>
         </div>
         );
     }
