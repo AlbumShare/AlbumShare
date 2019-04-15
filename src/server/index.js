@@ -92,8 +92,7 @@ app.use(express.static(path.join(__dirname + '/../../public')));
 // middleware for our express routes
 app.use('/api', require('./api'));
 
-require('/api/passport.js')(passport);
-
+require('./api/passport.js')(passport);
 
 // app.get('/', (req, res, next) => {
 //   res.send('hello you reached get/!');
