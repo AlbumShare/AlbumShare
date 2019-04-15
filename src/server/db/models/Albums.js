@@ -33,6 +33,11 @@ const Albums = db.define('Albums',
     	}
     },
 
+	albumPath: {
+		type: Sequelize.STRING,
+		AllowNull: true
+	}
+
 
   //   //privacy field: wheather the album is public or private
   //   privacy:

@@ -28,6 +28,10 @@ const Users = db.define("users", {
     isEmail: true,
     notEmpty: true
   },
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
   // SECURITY
   salt: {
     type: Sequelize.STRING,

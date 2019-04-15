@@ -23,9 +23,11 @@ const Photos = db.define('Photos',
 	    	key: 'albumId',
 	    	deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
     	}
-    }
-	//TODO: we need to figure out how to store the actual photo in the db
-	//create a column for the photo storage
+    },
+	photoPath: {
+		type: Sequelize.STRING,
+		AllowNull: true
+	}
 });
 
 module.exports = Photos;
