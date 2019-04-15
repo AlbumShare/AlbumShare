@@ -24,6 +24,7 @@ export default class Home extends Component {
           <Link to="/"><img id="icon" src={logo1} alt="" /></Link>
           <p id="logo_disc">Make sharing meaningful</p>  
           <Link  id="temp" to="/Profile"> Profile</Link> 
+          <Route path ="/Profile" component={Profile}/> 
         </div>
 
         
