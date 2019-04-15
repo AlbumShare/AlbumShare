@@ -15,3 +15,22 @@ export const fetchSingleUser = userID => async dispatch => {
   const user = res.data;
   dispatch(getUser(user));
 }
+
+// export const logIn = (email, password) => dispatch => {
+//   try {
+//     let res = await axios.post(``)
+//   } catch (error) {
+    
+//   }
+// }
+
+// REDUCER
+export default function (state = defaultUser, action) {
+  switch(action.type) {
+    default:
+      return state;
+    case GET_USER:
+      return action.user;
+  }
+}
+

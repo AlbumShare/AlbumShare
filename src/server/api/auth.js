@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Users = require('../../db/Users');
+const Users = require('../db/models/Users');
 
 router.post('/login', async (req, res, next) => {
   console.log('/login HIT!');
@@ -17,20 +17,6 @@ router.post('/login', async (req, res, next) => {
     }
   } catch (error) {
     next(error);
-  }
-})
-
-router.post('/signup', async (req, res, next) => {
-  console.log('/signup HIT!');
-  try {
-    const user = await Users.create(req.body)
-    req.login(user, err => (err ? next(err) : res.json(user)))
-  } catch (err) {
-    if (err.name === 'SequelizeUniqueConstraintError') {
-      res.status(401).send('User already exists')
-    } else {
-      next(err)
-    }
   }
 })
 
