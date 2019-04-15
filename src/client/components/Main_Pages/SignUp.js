@@ -9,17 +9,12 @@ class SignForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      UserName: '',
-      Email: '',
-      FirstName:'',
-      LastName:'',
-      Password:''
+      UserName: 'User Name',
+      Email: 'Email',
+      FirstName:'First Name',
+      LastName:'Last Name',
+      Password:'Password'
     };
-  
-      // this.handleChangefn = this.handleChangefn.bind(this);
-      // this.handleChangeln = this.handleChangeln.bind(this);
-      // this.handleChangemail = this.handleChangemail.bind(this);
-      // this.handleChangepw = this.handleChangepw.bind(this);
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.addUser = this.addUser.bind(this);
@@ -27,8 +22,8 @@ class SignForm extends React.Component {
 
   async addUser() {
     try {
-      await axios.post('http://localhost:5000/api/users/', {
-        userName: this.state.userName,
+      await axios.post('http://localhost:5000/api/users', {
+        userName: this.state.UserName,
         firstName: this.state.FirstName,
         lastName: this.state.LastName,
         email: this.state.Email,
@@ -46,39 +41,31 @@ class SignForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Sign in as ' + this.state.Name);
     event.preventDefault();
     this.addUser(this.state);
   }
-
-
 
   render() {
     return (
       <div>
         <h4>Welcome to Pico !</h4>
         <form onSubmit={this.handleSubmit}>
-          <p>User Name</p>
           <input type='text' 
-            name='userName'
-            value={this.state.userName} 
+            name='UserName'
+            value={this.state.UserName} 
             onChange={this.handleChange}/>
-          <p>First Name</p>
           <input type='text' 
             name='FirstName'
             value={this.state.FirstName}
             onChange={this.handleChange}/>
-          <p>Last Name</p>
           <input type='text' 
             name='LastName'
             value={this.state.LastName}
             onChange={this.handleChange}/>
-          <p>E-mail</p>
           <input type='text' 
             name='Email'
             value={this.state.Email}
             onChange={this.handleChange}/>
-          <p>Password</p>
           <input type='password' 
             name='Password'
             value={this.state.Password}
