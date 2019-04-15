@@ -66,11 +66,11 @@ class SignForm extends React.Component {
             name='Email'
             value={this.state.Email}
             onChange={this.handleChange}/>
-          <input type='password' 
+          <input type='text' 
             name='Password'
             value={this.state.Password}
             onChange={this.handleChange}/>
-          <button type="submit">Sign-Up</button>
+          <button id="Signup" type="submit">Sign-Up</button>
         </form>
         <Link id="LoginUpButton" to="/Login">Login</Link>      
       </div>
