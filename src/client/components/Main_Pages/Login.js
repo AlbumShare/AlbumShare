@@ -8,18 +8,22 @@ class NameForm extends React.Component {
     this.state = {Name: 'Name',
     Password:'Password'};
   
-    this.handleChangename = this.handleChangename.bind(this);
-    this.handleChangepw = this.handleChangepw.bind(this);
-
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChangename(event) {
-    this.setState({Name: event.target.value});
+  // handleChangename(event) {
+  //   this.setState({Name: event.target.value});
 
-  }
-  handleChangepw(event){
-    this.setState({Password: event.target.value});
+  // }
+  // handleChangepw(event){
+  //   this.setState({Password: event.target.value});
+  // }
+
+  handleChange(evt) {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    }, () => {console.log(this.state)})
   }
 
   handleSubmit(event) {
@@ -34,10 +38,10 @@ class NameForm extends React.Component {
       <div>
         <h4>Welcome Back to PICO!</h4>
         <form onSubmit={this.handleSubmit}>
-            <input type="text" value={this.state.Name} onChange={this.handleChangename} />
-            <input type="text" value={this.state.Password} onChange={this.handleChangepw} />
+            <input type="text" name="Name" value={this.state.Name} onChange={this.handleChange} />
+            <input type="text" name="Password" value={this.state.Password} onChange={this.handleChange} />
 
-          <input className="button" type="submit" value="Submit" />
+          <input className="button" type="submit" value="Log In" />
           <Link  id="SignUpButton" to="/SignUp">Sign up</Link>      
 
         </form>
@@ -46,4 +50,9 @@ class NameForm extends React.Component {
   }
 }
 
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     logIn: 
+//   }
+// }
 export default NameForm;

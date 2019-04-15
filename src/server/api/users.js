@@ -29,8 +29,6 @@ router.post('/', async (req, res, next) => {
   try {
     console.log(req.body)
     await Users.create(req.body);
-    // res.json(newUser);
-    // console.log('POST!!!');
   } catch (error) {
     if (error.name === 'SequelizeUniqueConstraintError') {
       res.status(401).send('User already exists')
