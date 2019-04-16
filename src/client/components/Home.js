@@ -31,7 +31,6 @@ export default class Home extends Component {
           
         </header>
 
-        
         <div className="Forms">
           
           <div id ="user_info">
@@ -39,7 +38,7 @@ export default class Home extends Component {
             <Route exact path="/" component={Login}/>
             <Route path="/Login" component={Login}/>
             <Route path ="/SignUp" component={SignUp}/> 
-            <Route path ="/Profile" component={Profile}/> 
+            <Route path ="/Profile" component={Profile}/>
  
 
           </div>
