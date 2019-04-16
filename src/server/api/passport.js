@@ -2,14 +2,26 @@ const LocalStrategy = require('passport-local').Strategy;
 const db = require('../db')
 
 module.exports = function (passport) {
-    passport.serializeUser(function (user, done){
-        done(null, user.username)
-    });
+    passport.serializeUser((user, done) => done(null, user.id));
 
-    passport.deserializeUser(function (username, done){
-        db.models.user.findById(username, function (err, user) {
-            done(err, user)
-        })
+    passport.deserializeUser(function (id, done){
+      try {
+        const user = db.models.Users.findById(id);
+        if(user.isAdmin) {
+          done(null, user);
+        }
+        else {
+          done(null, {
+            id: user.id,
+            userName: user.userName,
+            firstName: user.firstName,
+            lastName: user.lasName,
+            email: user.email
+          });
+        }
+      } catch (error) {
+        done(error);
+      }
     });
 
     passport.use('local-signup', new LocalStrategy({
