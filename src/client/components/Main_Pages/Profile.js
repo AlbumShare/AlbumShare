@@ -24,6 +24,7 @@ onDrop(picture) {
         <h2>Firstname Lastname</h2> 
         <ImageUploader id="upload" withIcon={true}
                 buttonText='Upload Profile Picture'
+                withPreview = {true}
                 onChange={this.onDrop}
                 imgExtension={['.jpg', '.gif', '.png', '.gif']}
                 maxFileSize={5242880}
