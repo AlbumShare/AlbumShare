@@ -11,6 +11,7 @@ class objecto extends React.Component{
         this.state = {
           something:'kawaaa'
         };
+        this.displayhandler = this.displayhandler.bind();
     }
     
     changeName(value){
@@ -19,12 +20,32 @@ class objecto extends React.Component{
                      something: value
              }))
      }
-      
-      
+     
+    async displayhandler(){
+        await axios.get('http://localhost:5000/api/users')
+        .then(function(response){
+            for (var i = 0; i < response.data.length; i++) {
+                var smth = document.createElement("h2");
+                smth.setAttribute("id", "demo"+i);
+                document.getElementById("testlist").appendChild(smth);
+                document.getElementById("demo"+i).innerHTML= response.data[i].userName + '\n' +response.data[i].email ;
+            }
+            
+        });
+    }
+    
+    componentDidMount(){
+        this.displayhandler();
+    }
+    
+
     render() {
         return (
         <div  id = "feed" >
-            <h2>Hello {this.state.something}</h2>
+            <ul id ="testlist">
+           
+
+            </ul>
             <navigation changeName={this.changeName}/>
         </div>
         );

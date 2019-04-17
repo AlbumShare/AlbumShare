@@ -18,7 +18,7 @@ router.post('/login', async (req, res, next) => {
     }
     else {
       console.log('log in success!');
-      alert('log in success!');
+      alert('log in success!'); 
 
       // req.logIn(user, err => (err ? next(err) : res.json(user)));
       req.logIn(user, err => {

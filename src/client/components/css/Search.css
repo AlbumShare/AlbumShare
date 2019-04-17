@@ -3,6 +3,10 @@ body{
     padding:0;
 }
 
+ul{
+    list-style:none;
+}
+
 #navbar{
     position: fixed;
     top: 0;

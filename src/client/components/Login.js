@@ -44,7 +44,7 @@ class NameForm extends React.Component {
 
   }
 
- 
+  //move login up one - Minyoung Na
 
   render() {
     return (
