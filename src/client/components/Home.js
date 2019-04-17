@@ -15,12 +15,8 @@ import './css/Main.css'
 export default class Home extends Component {
   constructor(props) {
     super(props);
-    this.toProfile = this.toProfile.bind(this);
   }
 
-  toProfile() {
-    this.props.history.push('/Profile');
-  }
 
   
   render() {
@@ -34,8 +30,7 @@ export default class Home extends Component {
         <div className="Iconhold">
           <Link to="/"><img id="icon" src={logo1} alt="" /></Link>
           <p id="logo_disc">Make sharing meaningful</p>  
-            <button onClick={this.toProfile}>Profile</button>
-
+      
         </div>
 
         

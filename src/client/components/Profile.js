@@ -45,20 +45,23 @@ fileUploadHandler = () => {
 
     render() {
       return (
+        <div className="App">
+
         <Router>
-          <div>
-            <Route path="/" component={navigation}/>
-            <div id = "profile2">
-                <h2>Firstname Lastname</h2> 
-                <input type="file" onChange={this.onDrop}/> 
-                <img src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" id="profpic"/>
-                <button onClick={this.fileUploadHandler}>Upload</button> 
-                <button onClick ={this.viewAlbums}> View Your Albums</button>
-                <h3> Your Albums </h3>
-                {albums}
-              </div> 
-          </div>
-      </Router>
+            <div>
+              <Route path="/" component={navigation}/>
+              <div id = "profile2">
+                  <h2>Firstname Lastname</h2> 
+                  <input type="file" onChange={this.onDrop}/> 
+                  <img src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" id="profpic"/>
+                  <button onClick={this.fileUploadHandler}>Upload</button> 
+                  <button onClick ={this.viewAlbums}> View Your Albums</button>
+                  <h3> Your Albums </h3>
+                  {albums}
+                </div> 
+            </div>
+          </Router>
+      </div>
       )
      
     }

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import './css/Search.css'
 import axios from 'axios';
+import './css/nav.css'
 
 export default class navigation extends React.Component{
 
@@ -18,6 +19,7 @@ export default class navigation extends React.Component{
 
         this.toHome = this.toHome.bind(this);
         this.toProfile= this.toProfile.bind(this);
+        this.toSearch= this.toSearch.bind(this);
 
       }
       
@@ -29,6 +31,12 @@ export default class navigation extends React.Component{
       
       toProfile() {
         this.props.history.replace('Profile')    ;
+        window.location.reload();
+    
+      }
+
+      toSearch() {
+        this.props.history.replace('Search')    ;
         window.location.reload();
     
       }
@@ -58,6 +66,7 @@ export default class navigation extends React.Component{
         });
       }
 
+      
     render() {
         return (
         <div id = "navbar" >
@@ -75,6 +84,7 @@ export default class navigation extends React.Component{
                 </form>
                 <objecto nav={this.state.nav}/>
             <button onClick={this.toProfile}>To profiles</button>
+            <button onClick={this.toSearch}>To Feed</button>
             <button onClick={this.toHome}>To Log in / Sign up</button>
 
         </div>
