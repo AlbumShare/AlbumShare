@@ -15,8 +15,24 @@ export default class navigation extends React.Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.Search = this.Search.bind(this);
+
+        this.toHome = this.toHome.bind(this);
+        this.toProfile= this.toProfile.bind(this);
+
       }
       
+      toHome() {
+        this.props.history.replace('')    ;
+        window.location.reload();
+    
+      }
+      
+      toProfile() {
+        this.props.history.replace('Profile')    ;
+        window.location.reload();
+    
+      }
+
       handleChange(event){
         this.setState({
           [event.target.name]: event.target.value
@@ -58,6 +74,8 @@ export default class navigation extends React.Component{
                 <button id="Search" type="submit">Search !</button>
                 </form>
                 <objecto nav={this.state.nav}/>
+            <button onClick={this.toProfile}>To profiles</button>
+            <button onClick={this.toHome}>To Log in / Sign up</button>
 
         </div>
         );
