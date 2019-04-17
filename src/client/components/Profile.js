@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/prof.css'
+import './css/prof.css'
 import ImageUploader from 'react-images-upload';
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import Axios from 'axios';
