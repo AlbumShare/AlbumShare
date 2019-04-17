@@ -39,7 +39,8 @@ class NameForm extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    this.props.logIn(this.state.email, this.state.password).then(this.toSearch());;
+    await this.props.logIn(this.state.email, this.state.password)
+    .then(this.toSearch());;
     // await Axios.post('http://localhost:5000/api/auth/login', this.state);
   }
 
