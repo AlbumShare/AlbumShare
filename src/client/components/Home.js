@@ -34,9 +34,9 @@ export default class Home extends Component {
         <div className="Iconhold">
           <Link to="/"><img id="icon" src={logo1} alt="" /></Link>
           <p id="logo_disc">Make sharing meaningful</p>  
-            {/* <Link  id="temp" onclick={this.onClick}> Profile</Link>  */}
+            {/* <Link  id="temp" onclick={this.onClick}> Profile</Link>  
             <button onClick={this.onClick}>Profile</button>
-            <button onClick={this.getMe}>GET ME</button>
+            <button onClick={this.getMe}>GET ME</button>*/}
         </div>
 
         

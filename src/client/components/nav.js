@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import './css/Search.css'
 import axios from 'axios';
+import './css/nav.css'
 
 export default class navigation extends React.Component{
 
@@ -15,8 +16,31 @@ export default class navigation extends React.Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.Search = this.Search.bind(this);
+
+        this.toHome = this.toHome.bind(this);
+        this.toProfile= this.toProfile.bind(this);
+        this.toSearch= this.toSearch.bind(this);
+
       }
       
+      toHome() {
+        this.props.history.replace('')    ;
+        window.location.reload();
+    
+      }
+      
+      toProfile() {
+        this.props.history.replace('Profile')    ;
+        window.location.reload();
+    
+      }
+
+      toSearch() {
+        this.props.history.replace('Search')    ;
+        window.location.reload();
+    
+      }
+
       handleChange(event){
         this.setState({
           [event.target.name]: event.target.value
@@ -42,6 +66,7 @@ export default class navigation extends React.Component{
         });
       }
 
+      
     render() {
         return (
         <div id = "navbar" >
@@ -55,9 +80,14 @@ export default class navigation extends React.Component{
                     value={this.state.nav}
                     onChange={this.handleChange}
                     />
-                <button id="Search" type="submit">Search !</button>
+                <div id="buttonlist">
+                  <button class="Search" type="submit">Search !</button>
+                  <button class="Search" onClick={this.toProfile}>To profiles</button>
+                  <button class="Search" onClick={this.toSearch}>To Feed</button>
+                  <button class="Search" onClick={this.toHome}>To Log in / Sign up</button>
+                </div>
                 </form>
-                <objecto nav={this.state.nav}/>
+           
 
         </div>
         );

@@ -43,6 +43,8 @@ class SignForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.addUser(this.state);
+    alert("Successfully Signed up as "+this.state.UserName)
+
   }
 
   render() {

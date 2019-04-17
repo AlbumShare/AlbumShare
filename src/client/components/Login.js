@@ -12,6 +12,9 @@ class NameForm extends React.Component {
   
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.toSearch = this.toSearch.bind(this);
+
   }
 
   // handleChangename(event) {
@@ -22,6 +25,12 @@ class NameForm extends React.Component {
   //   this.setState({Password: event.target.value});
   // }
 
+  toSearch() {
+    this.props.history.replace('Search')    ;
+    window.location.reload();
+
+  }
+
   handleChange(evt) {
     this.setState({
       [evt.target.name]: evt.target.value
@@ -30,11 +39,12 @@ class NameForm extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    this.props.logIn(this.state.email, this.state.password);
+    await this.props.logIn(this.state.email, this.state.password)
+    .then(this.toSearch());;
     // await Axios.post('http://localhost:5000/api/auth/login', this.state);
   }
 
- 
+  //move login up one - Minyoung Na
 
   render() {
     return (
