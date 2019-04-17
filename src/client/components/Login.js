@@ -26,7 +26,7 @@ class NameForm extends React.Component {
 
   toSearch() {
     this.props.history.replace('Search')    ;
-    //window.location.reload();
+    window.location.reload();
 
   }
 
@@ -40,7 +40,7 @@ class NameForm extends React.Component {
     event.preventDefault();
     
     await Axios.post('http://localhost:5000/api/auth/login', this.state)
-    //.then(this.toSearch());
+    .then(this.toSearch());
 
   }
 
