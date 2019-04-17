@@ -11,21 +11,10 @@ require('./server');
 
 
 const PORT = 5000;
-// db.sync()
-//   .then((promise) => {
-//     // console.log(promise);
-//     console.log("db synced!");
-//     app.listen(PORT, () => {
-//       console.log("Express server listening on port # " + PORT + "!" );
-//     })
-//   })
-// db.authenticate().then(() => {
-//   console.log('connected to database');
-// })
 
 const init = async () => {
   try {
-    await db.sync({force: true}).then(() => {
+    await db.sync({force: false}).then(() => {
       console.log("database sync complete!");
     });
     app.listen(PORT)

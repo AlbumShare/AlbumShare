@@ -1,45 +1,48 @@
 import React, { Component } from 'react';
-import {addUser} from '../../../reducer/userReducer';
+// import {addUser} from '../../../reducer/userReducer';
 import {connect} from 'react-redux';
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import '../css/form.css'
+import axios from 'axios';
 
 class SignForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      UserName: 'User Name',
       Email: 'Email',
       FirstName:'First Name',
       LastName:'Last Name',
-      Password:'Password'};
-  
-      this.handleChangefn = this.handleChangefn.bind(this);
-      this.handleChangeln = this.handleChangeln.bind(this);
-      this.handleChangemail = this.handleChangemail.bind(this);
-      this.handleChangepw = this.handleChangepw.bind(this);
-
+      Password:'Password'
+    };
+      this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.addUser = this.addUser.bind(this);
   }
 
-  handleChangefn(event) {
-    this.setState({FirstName: event.target.value});
-
+  async addUser() {
+    try {
+      await axios.post('http://localhost:5000/api/users', {
+        userName: this.state.UserName,
+        firstName: this.state.FirstName,
+        lastName: this.state.LastName,
+        email: this.state.Email,
+        password: this.state.Password
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
-  handleChangeln(event){
-    this.setState({LastName: event.target.value});
-  }
 
-  handleChangemail(event){
-    this.setState({Email: event.target.value});
-  }
-
-  handleChangepw(event){
-    this.setState({Password: event.target.value});
+  handleChange(event){
+    this.setState({
+      [event.target.name]: event.target.value
+    },() => {console.log(this.state)});
   }
 
   handleSubmit(event) {
-    alert('Sign in as ' + this.state.Name);
     event.preventDefault();
+    this.addUser(this.state);
   }
 
   render() {
@@ -47,15 +50,29 @@ class SignForm extends React.Component {
       <div>
         <h4>Welcome to Pico !</h4>
         <form onSubmit={this.handleSubmit}>
-            <input type="text" value={this.state.FirstName} onChange={this.handleChangefname} />
-            <input type="text" value={this.state.LastName} onChange={this.handleChangelname} />
-            <input type="text" value={this.state.Email} onChange={this.handleChangemail} />
-            <input type="text" value={this.state.Password} onChange={this.handleChangepw} />
-
-          <input className="button" type="submit" value="Submit" />
-          <Link id="LoginUpButton" to="/Login">Login</Link>      
-
+          <input type='text' 
+            name='UserName'
+            value={this.state.UserName} 
+            onChange={this.handleChange}/>
+          <input type='text' 
+            name='FirstName'
+            value={this.state.FirstName}
+            onChange={this.handleChange}/>
+          <input type='text' 
+            name='LastName'
+            value={this.state.LastName}
+            onChange={this.handleChange}/>
+          <input type='text' 
+            name='Email'
+            value={this.state.Email}
+            onChange={this.handleChange}/>
+          <input type='text' 
+            name='Password'
+            value={this.state.Password}
+            onChange={this.handleChange}/>
+          <button id="Signup" type="submit">Sign-Up</button>
         </form>
+        <Link id="LoginUpButton" to="/Login">Login</Link>      
       </div>
     );
   }

@@ -7,5 +7,4 @@ const db = new Sequelize(`postgres://localhost:5432/albumshare`, {
 });
 
 
-
 module.exports = db;

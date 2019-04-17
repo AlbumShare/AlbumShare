@@ -14,15 +14,7 @@
     transform:scale(1.1);
 }
 
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+
 
   #logo_disc{
     text-align: start;
@@ -94,10 +86,33 @@ input[type=text], select {
     font-size: 0.8em;
   }
 
-  
+  #Signup{
+    background-color: #f78154;
+    border: none;
+    color: white;
+    padding: 3%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 7%;
+    cursor: pointer;
+
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+
+  }
+
+  #Signup:hover{
+
+    transform:scale(1.1);
+
+  }
+
   #LoginUpButton{
     height: 20%;
     display: block;
     font-size: 0.8em;
 
   }
+
