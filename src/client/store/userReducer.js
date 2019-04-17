@@ -30,6 +30,14 @@ export const authLogin = (email, password) => async dispatch => {
     dispatch(getUser(res.data)); 
 }
 
+export const me = () => async dispatch => {
+  try {
+    const res = await axios.get('http://localhost:5000/api/auth/me');
+    dispatch(getUser(res.data));
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 // REDUCER
 export default function (state = defaultUser, action) {

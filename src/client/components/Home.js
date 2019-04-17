@@ -15,11 +15,8 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
-    this.getMe = this.getMe.bind(this);
   }
-  async getMe() {
-    await Axios.get('http://localhost:5000/api/auth/me');
-  }
+
   onClick() {
     this.props.history.push('/Profile');
   }
@@ -27,31 +24,22 @@ export default class Home extends Component {
 
     return (
       <Router>
-
       <div className="App">
         <header className="App-header">
-
         <div className="Iconhold">
           <Link to="/"><img id="icon" src={logo1} alt="" /></Link>
           <p id="logo_disc">Make sharing meaningful</p>  
-            {/* <Link  id="temp" onclick={this.onClick}> Profile</Link>  
+            <Link  id="temp" onclick={this.onClick}> Profile</Link>  
             <button onClick={this.onClick}>Profile</button>
-            <button onClick={this.getMe}>GET ME</button>*/}
-        </div>
 
-        
-          
+            <button onClick={this.getMe}>GET ME</button>
+        </div>
         </header>
         <div className="Forms">
-          
           <div id ="user_info">
-
             <Route exact path="/" component={Login}/>
             <Route path="/Login" component={Login}/>
             <Route path ="/SignUp" component={SignUp}/> 
-            {/* <Route path ="/Profile" component={Profile}/> */}
- 
-
           </div>
         </div>
 

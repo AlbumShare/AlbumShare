@@ -1,5 +1,9 @@
-import React, {Component} from 'react'
-import {BrowserRouter ,Router, Route, Switch} from 'react-router-dom'
+
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {me} from './store/userReducer';
+
 
 // import {
 //   Home, Login, Main, nav, objecto, Placeholder, Profile, Search, SignUp, User
@@ -12,9 +16,14 @@ import createHistory from 'history/createBrowserHistory';
 
 const history = createHistory();   
 
-export default class Routes extends Component {
+class Routes extends Component {
+
+  componentDidMount() {
+    this.props.loadInitialData()
+  }
 
   render() {
+    console.log(this.props);
     const {isLoggedIn} = this.props
     return(
       <Router history={history} >
@@ -26,3 +35,19 @@ export default class Routes extends Component {
       </Router>
   )}
 }
+
+const mapStatetoProps = (state) => {
+  return {
+    isLoggedIn: !!state.userReducer.id
+  }
+}
+
+const mapDispatchtoProps = (dispatch) => {
+  return {
+    loadInitialData: () => {
+      dispatch(me())
+    }
+  }
+}
+
+export default connect(mapStatetoProps, mapDispatchtoProps)(Routes);

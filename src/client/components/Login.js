@@ -17,13 +17,6 @@ class NameForm extends React.Component {
 
   }
 
-  // handleChangename(event) {
-  //   this.setState({Name: event.target.value});
-
-  // }
-  // handleChangepw(event){
-  //   this.setState({Password: event.target.value});
-  // }
 
   toSearch() {
     this.props.history.replace('Search')    ;
@@ -39,9 +32,10 @@ class NameForm extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    await this.props.logIn(this.state.email, this.state.password)
-    .then(this.toSearch());;
-    // await Axios.post('http://localhost:5000/api/auth/login', this.state);
+
+    this.props.logIn(this.state.email, this.state.password);
+    this.props.history.push('/');
+
   }
 
   //move login up one - Minyoung Na
