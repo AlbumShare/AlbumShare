@@ -45,28 +45,28 @@ app.use(session({
 // passport middleware: used for auth user
 app.use(passport.initialize());
 app.use(passport.session());
+require('./config/passport.js')(passport);
+// passport.serializeUser((user, done) => done(null, user.id));
 
-passport.serializeUser((user, done) => done(null, user.id));
-
-passport.deserializeUser( async (id, done) => {
-  try {
-    const user = db.models.Users.findById(id);
-    if(user.isAdmin) {
-      done(null, user);
-    }
-    else {
-      done(null, {
-        id: user.id,
-        userName: user.userName,
-        firstName: user.firstName,
-        lastName: user.lasName,
-        email: user.email
-      });
-    }
-  } catch (error) {
-    done(error);
-  }
-})
+// passport.deserializeUser( async (id, done) => {
+//   try {
+//     const user = db.models.Users.findById(id);
+//     if(user.isAdmin) {
+//       done(null, user);
+//     }
+//     else {
+//       done(null, {
+//         id: user.id,
+//         userName: user.userName,
+//         firstName: user.firstName,
+//         lastName: user.lasName,
+//         email: user.email
+//       });
+//     }
+//   } catch (error) {
+//     done(error);
+//   }
+// })
 
 // check if client sent cookie
 app.use(function(req, res, next) {
@@ -85,9 +85,6 @@ app.use(function(req, res, next) {
 
 // body parsing middleware
 app.use(bodyparser.json());
-
-
-
 // middleware to serve static files
 app.use(express.static(path.join(__dirname + '/../../public')));
 
@@ -98,7 +95,7 @@ app.use('/api', require('./api'));
 // require('./api/session.js')(router, passport);
 
 
-require('./config/passport.js')(passport);
+
 
 // app.get('/', (req, res, next) => {
 //   res.send('hello you reached get/!');

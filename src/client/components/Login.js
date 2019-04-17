@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
 import './css/form.css'
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
-import Axios from 'axios';
+import {authLogin} from '../store/userReducer';
 
 class NameForm extends React.Component {
   constructor(props) {
@@ -29,7 +30,8 @@ class NameForm extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    await Axios.post('http://localhost:5000/api/auth/login', this.state);
+    this.props.logIn(this.state.email, this.state.password);
+    // await Axios.post('http://localhost:5000/api/auth/login', this.state);
   }
 
  
@@ -51,9 +53,11 @@ class NameForm extends React.Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     logIn: 
-//   }
-// }
-export default NameForm;
+const mapDispatchToProps = dispatch => {
+  return {
+    logIn: (email, password) => (dispatch(authLogin(email, password)))
+  }
+}
+
+
+export default connect(null, mapDispatchToProps)(NameForm);
