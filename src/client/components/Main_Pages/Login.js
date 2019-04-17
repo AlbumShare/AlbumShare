@@ -42,8 +42,8 @@ class NameForm extends React.Component {
             <input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
             <input type="text" name="password" value={this.state.password} onChange={this.handleChange} />
 
-          <input className="button" type="submit" value="Log In" />
-          <Link  id="SignUpButton" to="/SignUp">Sign up</Link>      
+          <input className="button" type="submit" value="Submit" />
+          <Link  id="SignUpButton" to="/SignUp">Sign up</Link>  
 
         </form>
       </div>
