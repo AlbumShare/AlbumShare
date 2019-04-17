@@ -72,7 +72,7 @@ class SignForm extends React.Component {
             name='Password'
             value={this.state.Password}
             onChange={this.handleChange}/>
-          <button id="Signup" type="submit">Sign-Up</button>
+          <button className="button" type="submit">Sign-Up</button>
         </form>
         <Link id="LoginUpButton" to="/Login">Login</Link>      
       </div>
