@@ -14,7 +14,7 @@ const PORT = 5000;
 
 const init = async () => {
   try {
-    await db.sync({force: true}).then(() => {
+    await db.sync({force: false}).then(() => {
       console.log("database sync complete!");
     });
     app.listen(PORT)

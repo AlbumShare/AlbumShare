@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import {addUser} from '../../../reducer/userReducer';
 import {connect} from 'react-redux';
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
-import '../css/form.css'
+import './css/form.css'
 import axios from 'axios';
 
 class SignForm extends React.Component {

@@ -12,28 +12,7 @@ const passport = require('passport');
 const cookieParser = require ('cookie-parser');
 
 
-// register passport
-passport.serializeUser((user, done) => done(null, user.id));
 
-passport.deserializeUser( async (id, done) => {
-  try {
-    const user = db.models.Users.findById(id);
-    if(user.isAdmin) {
-      done(null, user);
-    }
-    else {
-      done(null, {
-        id: user.id,
-        userName: user.userName,
-        firstName: user.firstName,
-        lastName: user.lasName,
-        email: user.email
-      });
-    }
-  } catch (error) {
-    done(error);
-  }
-})
 
 // express instance
 const app = express();
@@ -65,6 +44,28 @@ app.use(session({
 // passport middleware: used for auth user
 app.use(passport.initialize());
 app.use(passport.session());
+
+passport.serializeUser((user, done) => done(null, user.id));
+
+passport.deserializeUser( async (id, done) => {
+  try {
+    const user = db.models.Users.findById(id);
+    if(user.isAdmin) {
+      done(null, user);
+    }
+    else {
+      done(null, {
+        id: user.id,
+        userName: user.userName,
+        firstName: user.firstName,
+        lastName: user.lasName,
+        email: user.email
+      });
+    }
+  } catch (error) {
+    done(error);
+  }
+})
 
 // check if client sent cookie
 app.use(function(req, res, next) {

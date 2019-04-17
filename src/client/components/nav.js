@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
-import '../css/Search.css'
+import './css/Search.css'
 import axios from 'axios';
 
 export default class navigation extends React.Component{
