@@ -24,7 +24,6 @@ export const authLogin = (email, password) => async dispatch => {
   let res;
   try {
     res = await axios.post(`http://localhost:5000/api/auth/login`, {email, password});
-    // console.log(res);
   } catch (error) {
     console.log("ERROR LOGGING IN");
   }

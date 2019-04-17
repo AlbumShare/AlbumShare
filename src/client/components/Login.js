@@ -12,7 +12,18 @@ class NameForm extends React.Component {
   
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.toSearch = this.toSearch.bind(this);
+
   }
+
+
+  toSearch() {
+    this.props.history.replace('Search')    ;
+    window.location.reload();
+
+  }
+
   handleChange(evt) {
     this.setState({
       [evt.target.name]: evt.target.value
@@ -21,11 +32,13 @@ class NameForm extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
+
     this.props.logIn(this.state.email, this.state.password);
     this.props.history.push('/');
+
   }
 
- 
+  //move login up one - Minyoung Na
 
   render() {
     return (
