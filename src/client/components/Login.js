@@ -13,15 +13,6 @@ class NameForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  // handleChangename(event) {
-  //   this.setState({Name: event.target.value});
-
-  // }
-  // handleChangepw(event){
-  //   this.setState({Password: event.target.value});
-  // }
-
   handleChange(evt) {
     this.setState({
       [evt.target.name]: evt.target.value
@@ -31,7 +22,7 @@ class NameForm extends React.Component {
   async handleSubmit(event) {
     event.preventDefault();
     this.props.logIn(this.state.email, this.state.password);
-    // await Axios.post('http://localhost:5000/api/auth/login', this.state);
+    this.props.history.push('/');
   }
 
  
