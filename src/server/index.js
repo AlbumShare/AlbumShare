@@ -1,4 +1,5 @@
 const express = require('express');
+const router = require('express').Router();
 const path = require('path');
 const volleyball = require('volleyball');
 const bodyparser = require('body-parser');
@@ -92,8 +93,12 @@ app.use(express.static(path.join(__dirname + '/../../public')));
 
 // middleware for our express routes
 app.use('/api', require('./api'));
+// require('./api/auth.js')(router);
+// require('./api/users.js')(router, passport);
+// require('./api/session.js')(router, passport);
 
-require('./api/passport.js')(passport);
+
+require('./config/passport.js')(passport);
 
 // app.get('/', (req, res, next) => {
 //   res.send('hello you reached get/!');

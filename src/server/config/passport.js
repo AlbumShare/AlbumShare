@@ -1,4 +1,4 @@
-const LocalStrategy = require('passport-local').Strategy;
+const LocalStrategy = require('passport-local/lib').Strategy;
 const db = require('../db')
 
 module.exports = function (passport) {
@@ -6,7 +6,7 @@ module.exports = function (passport) {
 
     passport.deserializeUser(function (id, done){
       try {
-        const user = db.models.Users.findById(id);
+        const user = db.models.user.findById(id);
         if(user.isAdmin) {
           done(null, user);
         }
@@ -15,7 +15,7 @@ module.exports = function (passport) {
             id: user.id,
             userName: user.userName,
             firstName: user.firstName,
-            lastName: user.lasName,
+            lastName: user.lastName,
             email: user.email
           });
         }
@@ -32,23 +32,23 @@ module.exports = function (passport) {
         function (req, username, password, done){
             process.nextTick(function () {
 
-                db.models.user.findOne({'local.username': username}, function (err, user) {
+                db.models.user.findOne({where: {userName: req.body.userName}}, function (err, user) {
                     if (err) {
                         return done(err);
                     }
 
                     if (user) {
-                        return done(null, false, {message: 'User email already taken: ' + username});
+                        return done(null, false, {message: 'Username already taken: ' + username});
                     }
                     else {
                         var newUser = new db.models.user();
 
-                        newUser.local.username = username;
-                        newUser.local.password = newUser.generateHash(password);
+                        newUser.userName = username;
+                        //newUser.password = newUser.generateHash(password);
                         newUser.salt = req.body.salt;
-                        newUser.first_name = req.body.first_name;
-                        newUser.last_name = req.body.last_name;
-                        newUser.delete = false;
+                        newUser.firstName = req.body.firstName;
+                        newUser.lastName = req.body.LastName;
+                        newUser.email = req.body.email;
 
                         // save the user
                         newUser.save(function (err) {
@@ -68,7 +68,7 @@ module.exports = function (passport) {
         },
         function (req, username, password, done) {
 
-            db.models.user.findOne({'local.username': username}, function (err, user) {
+            db.models.user.findOne({where: {userName: req.body.userName}}, function (err, user) {
                 if (err) {
                     return done(err);
                 }
@@ -79,7 +79,7 @@ module.exports = function (passport) {
                 }
 
                 // If user password does not match
-                if (user.validPassword(password)) {
+                if (user.password != password) {
                     return done(null, false, {message: 'Password does not match'});
                 }
 
