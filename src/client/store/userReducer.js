@@ -11,18 +11,26 @@ const getUser = user => ({type: GET_USER, user});
 
 // THUNK CREATOR
 export const fetchSingleUser = userID => async dispatch => {
-  const res = await axios.get(`/api/users/${userID}`);
-  const user = res.data;
-  dispatch(getUser(user));
+  try{
+    const res = await axios.get(`/api/users/${userID}`);
+    const user = res.data;
+    dispatch(getUser(user));
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-// export const logIn = (email, password) => dispatch => {
-//   try {
-//     let res = await axios.post(``)
-//   } catch (error) {
-    
-//   }
-// }
+export const authLogin = (email, password) => async dispatch => {
+  let res;
+  try {
+    res = await axios.post(`http://localhost:5000/api/auth/login`, {email, password});
+    // console.log(res);
+  } catch (error) {
+    console.log("ERROR LOGGING IN");
+  }
+    dispatch(getUser(res.data)); 
+}
+
 
 // REDUCER
 export default function (state = defaultUser, action) {

@@ -25,20 +25,26 @@ const User = require('../db/models/Users');
 // })
 //
 // // POST a new user
-// router.post('/', async (req, res, next) => {
-//   try {
-//     console.log(req.body)
-//     await User.create(req.body);
-//   } catch (error) {
-//     if (error.name === 'SequelizeUniqueConstraintError') {
-//       res.status(401).send('User already exists')
-//     }
-//     else {
-//       console.log("Error with POST user");
-//       next(error);
-//     }
-//   }
-// })
+router.post('/', async (req, res, next) => {
+  try {
+    console.log(req.body)
+    await User.create(req.body);
+  } catch (error) {
+    if (error.name === 'SequelizeUniqueConstraintError') {
+      res.status(401).send('User already exists')
+    }
+    else {
+      console.log("Error with POST user");
+      next(error);
+    }
+  }
+  // passport.authenticate('local-signup', function (err, user, info) {
+  //   if (err) {
+  //     res.status(400).send(err);
+  //   }
+  //   res.send(user);
+  // })(req, res, next);
+})
 //
 // // PUT (EDIT) a user's information
 // // router.put('/:id', async (req, res, next) => {
@@ -57,14 +63,14 @@ const User = require('../db/models/Users');
   /**
    * @POST
    */
-  router.post('/', function (req, res, next) {
-    passport.authenticate('local-signup', function (err, user, info) {
-      if (err) {
-        res.status(400).send(err);
-      }
-      res.send(user);
-    })(req, res, next);
-  });
+  // router.post('/', function (req, res, next) {
+  //   passport.authenticate('local-signup', function (err, user, info) {
+  //     if (err) {
+  //       res.status(400).send(err);
+  //     }
+  //     res.send(user);
+  //   })(req, res, next);
+  // });
 
   /**
    * @POST
