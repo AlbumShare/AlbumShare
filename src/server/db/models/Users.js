@@ -10,7 +10,11 @@ const Users = db.define("users", {
     unique: 'compositeIndex',
     primaryKey: true
   },
-
+  profilePicture:{
+    type: Sequelize.BLOB,
+    AllowNull: false,
+    defaultValue: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
+  },
   firstName: {
     type: Sequelize.STRING,
     AllowNull: false,

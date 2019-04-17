@@ -4,7 +4,7 @@ import {Provider} from 'react-redux';
 
 import Home from './Home';
 import Profile from './Main_Pages/Profile';
-import store from '../../store';
+//import store from '../../store';
 import Search from './Search';
 import User from './User';
 
