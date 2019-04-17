@@ -17,6 +17,14 @@ onDrop(picture) {
         pictures: this.state.pictures.concat(picture),
    });
 }
+  // If input file doesn't work out use this shit
+  <ImageUploader id="upload" withIcon={true}
+  buttonText='Upload Profile Picture'
+  withPreview = {true}
+  onChange={this.onDrop}
+  imgExtension={['.jpg', '.gif', '.png', '.gif']}
+  maxFileSize={5242880}
+/>
 */
 
 state = {
@@ -33,14 +41,16 @@ fileUploadHandler = () => {
   Axios.post('')
 }
 
+
     render() {
       return (
     <div id = "profile2">
         <h2>Firstname Lastname</h2> 
         <input type="file" onChange={this.onDrop}/> 
-        <button onClick={this.fileUploadHandler}>Choose Profile Picture</button>
         <img src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" id="profpic"/>
-        <h3>Your Albums</h3>
+        <button onClick={this.fileUploadHandler}>Upload</button> 
+        <button onClick ={this.viewAlbums}> View Your Albums</button>
+        <h3> Your Albums </h3>
         {albums}
       </div> 
       )
@@ -48,19 +58,10 @@ fileUploadHandler = () => {
     }
   }
 
-/*
-  <ImageUploader id="upload" withIcon={true}
-  buttonText='Upload Profile Picture'
-  withPreview = {true}
-  onChange={this.onDrop}
-  imgExtension={['.jpg', '.gif', '.png', '.gif']}
-  maxFileSize={5242880}
-/>
-*/
-
   for(var j in albums){
     document.getElementById('profile2').innerHTML = j;
   }
   // populate with album id's
   var albums = ["album1 ", "album2 ", "album3 "]
+ 
   export default Profile;
