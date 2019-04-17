@@ -80,12 +80,14 @@ export default class navigation extends React.Component{
                     value={this.state.nav}
                     onChange={this.handleChange}
                     />
-                <button id="Search" type="submit">Search !</button>
+                <div id="buttonlist">
+                  <button class="Search" type="submit">Search !</button>
+                  <button class="Search" onClick={this.toProfile}>To profiles</button>
+                  <button class="Search" onClick={this.toSearch}>To Feed</button>
+                  <button class="Search" onClick={this.toHome}>To Log in / Sign up</button>
+                </div>
                 </form>
-                <objecto nav={this.state.nav}/>
-            <button onClick={this.toProfile}>To profiles</button>
-            <button onClick={this.toSearch}>To Feed</button>
-            <button onClick={this.toHome}>To Log in / Sign up</button>
+           
 
         </div>
         );

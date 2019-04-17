@@ -7,41 +7,15 @@ ul{
     list-style:none;
 }
 
-#navbar{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    left: 0;
-    z-index: 100;
-}
+
 
 #searchbar{
     padding: 0.75% 1.25%;
+    margin-bottom: 0;
     width: 50%;
 }
 
-#Search{
-    background-color: #f78154;
-    border: none;
-    color: white;
-    padding: 0.75%;
-    text-align: center;  
-    border-radius: 15px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 0.8em;
-    margin: 1%;
-    cursor: pointer;
 
-    transition-duration: .2s;
-    transition-timing-function: ease-out;
-}
-
-#Search:hover{
-
-    transform:scale(1.1);
-
-  }
 
  #feed{
     position: fixed;
@@ -49,7 +23,7 @@ ul{
     width: 100%;
     background-color:whitesmoke;
     left: 0;
-    top: 16%;
+    top: 15%;
     text-align: Center;
 
  } 
