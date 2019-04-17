@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import logo1 from './img/Logo1.svg';
 import style from '../public/styles.css';
 
-import Login from './Main_Pages/Login';
-import SignUp from './Main_Pages/SignUp';
+import Login from './Login';
+import SignUp from './SignUp';
 
 import './css/Main.css'
 export default class Home extends Component {

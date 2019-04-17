@@ -3,8 +3,8 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Link, Route,Switch} from 'react-router-dom';
 
-import navigation from './Search_Pages/nav'
-import objecto from './Search_Pages/objecto'
+import navigation from './nav'
+import objecto from './objecto'
 
 import './css/Main.css'
 import './css/Search.css'
