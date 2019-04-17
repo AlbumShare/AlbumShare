@@ -82,7 +82,7 @@
   
   #SignUpButton{
     height: 20%;
-    display: block;
+    display: inline-block;
     font-size: 0.8em;
   }
 
@@ -111,7 +111,7 @@
 
   #LoginUpButton{
     height: 20%;
-    display: block;
+    display: inline-block;
     font-size: 0.8em;
 
   }

@@ -8,7 +8,7 @@ form{
 input[type=text] {
   width: 87%;
   padding: 3% 7%;
-  margin: 2% 0px;
+  margin: 1.2% 0px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -24,7 +24,7 @@ input[type=text] {
         text-decoration: none;
         display: inline-block;
         font-size: 0.8em;
-        margin: 7%;
+        margin: 3%;
         cursor: pointer;
         transition-duration: .2s;
         transition-timing-function: ease-out;
