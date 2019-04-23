@@ -54,23 +54,23 @@ class SignForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input type='text' 
             name='UserName'
-            value={this.state.UserName} 
+            placeholder="User Name" 
             onChange={this.handleChange}/>
           <input type='text' 
             name='FirstName'
-            value={this.state.FirstName}
+            placeholder="First Name"
             onChange={this.handleChange}/>
           <input type='text' 
             name='LastName'
-            value={this.state.LastName}
+            placeholder="Last Name"
             onChange={this.handleChange}/>
           <input type='text' 
             name='Email'
-            value={this.state.Email}
+            placeholder="Email"
             onChange={this.handleChange}/>
           <input type='text' 
             name='Password'
-            value={this.state.Password}
+            placeholder="Password"
             onChange={this.handleChange}/>
           <button className="button" type="submit">Sign-Up</button>
         </form>

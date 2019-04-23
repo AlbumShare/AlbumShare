@@ -51,8 +51,8 @@ class NameForm extends React.Component {
       <div>
         <h4>Welcome Back to PICO!</h4>
         <form onSubmit={this.handleSubmit}>
-            <input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
-            <input type="text" name="password" value={this.state.password} onChange={this.handleChange} />
+            <input type="text" name="email" placeholder="Email" onChange={this.handleChange} />
+            <input type="text" name="password" placeholder="Password" onChange={this.handleChange} />
 
           <input className="button" type="submit" value="Submit" />
           <Link  id="SignUpButton" to="/SignUp">Sign up</Link>  
